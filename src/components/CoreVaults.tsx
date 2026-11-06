@@ -1,7 +1,11 @@
 import { COURSES, USER_DRIVE_LINKS } from '../data/courses';
-import lectureNotesImg from '../assets/images/lecture_notes_vault_1793999044455.jpg';
-import pastPapersImg from '../assets/images/past_papers_vault_1793999060558.jpg';
-import labManualsImg from '../assets/images/lab_manuals_vault_1793999076660.jpg';
+
+const LECTURE_NOTES_IMAGE_URL =
+  'https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=1200&q=80';
+const PAST_PAPERS_IMAGE_URL =
+  'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1200&q=80';
+const LAB_MANUALS_IMAGE_URL =
+  'https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?auto=format&fit=crop&w=1200&q=80';
 
 interface CoreVaultsProps {
   onOpenCategory: (category: 'Lecture Notes' | 'Past Papers' | 'Lab Manuals') => void;
@@ -38,7 +42,7 @@ export default function CoreVaults({ onOpenCategory, onSelectSemester, onShowToa
         {/* Card 1: Lecture Notes */}
         <div className="group card-vault relative rounded-2xl overflow-hidden min-h-[380px] flex flex-col justify-end p-6 border border-white/10 hover:border-cyan-400/60 bg-[#080e18]">
           <img
-            src={lectureNotesImg}
+            src={LECTURE_NOTES_IMAGE_URL}
             alt="Lecture Notes with circuit analysis and engineering textbooks"
             className="absolute inset-0 w-full h-full object-cover filter brightness-[0.45] contrast-105 group-hover:scale-105 transition-transform duration-700"
           />
@@ -77,7 +81,7 @@ export default function CoreVaults({ onOpenCategory, onSelectSemester, onShowToa
         {/* Card 2: Past Papers & Solutions */}
         <div className="group card-vault relative rounded-2xl overflow-hidden min-h-[380px] flex flex-col justify-end p-6 border border-white/10 hover:border-amber-400/60 bg-[#080e18]">
           <img
-            src={pastPapersImg}
+            src={PAST_PAPERS_IMAGE_URL}
             alt="Past papers, step-by-step circuit calculus solutions, and engineering calculator"
             className="absolute inset-0 w-full h-full object-cover filter brightness-[0.45] contrast-105 group-hover:scale-105 transition-transform duration-700"
           />
@@ -116,7 +120,7 @@ export default function CoreVaults({ onOpenCategory, onSelectSemester, onShowToa
         {/* Card 3: Lab Manuals & Code */}
         <div className="group card-vault relative rounded-2xl overflow-hidden min-h-[380px] flex flex-col justify-end p-6 border border-white/10 hover:border-sky-400/60 bg-[#080e18]">
           <img
-            src={labManualsImg}
+            src={LAB_MANUALS_IMAGE_URL}
             alt="Electronics hardware lab bench, oscilloscope waveforms, breadboard, and code terminal"
             className="absolute inset-0 w-full h-full object-cover filter brightness-[0.45] contrast-105 group-hover:scale-105 transition-transform duration-700"
           />

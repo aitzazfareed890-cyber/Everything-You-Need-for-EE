@@ -35,11 +35,11 @@ export default function Hero({ onSelectSemester, onSelectCategory, onOpenDrivesM
         </div>
 
         {/* Hero Main Title - strictly two lines on EVERY device */}
-        <h1 className="w-full font-extrabold tracking-tight text-white mb-4 font-display drop-shadow-[0_4px_24px_rgba(0,0,0,0.9)] flex flex-col items-center leading-none">
-          <span className="block text-[clamp(1.5rem,6.8vw,4.5rem)] whitespace-nowrap leading-tight">
+        <h1 className="w-full max-w-full font-extrabold tracking-tight text-white mb-4 font-display drop-shadow-[0_4px_24px_rgba(0,0,0,0.9)] flex flex-col items-center">
+          <span className="hero-title-line-1 block text-center">
             Everything You Need
           </span>
-          <span className="block text-[clamp(1.75rem,7.8vw,4.75rem)] text-cyan-400 drop-shadow-[0_0_28px_rgba(34,211,238,0.65)] whitespace-nowrap leading-tight mt-1">
+          <span className="hero-title-line-2 block text-cyan-400 drop-shadow-[0_0_28px_rgba(34,211,238,0.65)] text-center mt-1">
             For EE
           </span>
         </h1>

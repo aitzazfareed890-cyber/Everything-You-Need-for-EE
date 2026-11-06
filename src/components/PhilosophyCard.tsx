@@ -1,4 +1,5 @@
-import archiveImg from '../assets/images/archive_genesis_1793999030047.jpg';
+const ARCHIVE_IMAGE_URL =
+  'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80';
 
 export default function PhilosophyCard() {
   return (
@@ -30,7 +31,7 @@ export default function PhilosophyCard() {
           {/* Contextual Image */}
           <div className="relative md:col-span-5 h-56 md:h-full min-h-[220px] overflow-hidden">
             <img
-              src={archiveImg}
+              src={ARCHIVE_IMAGE_URL}
               alt="Electrical engineering schematics, oscilloscope, and laboratory desk"
               className="w-full h-full object-cover filter brightness-[0.75] contrast-105 group-hover:scale-105 transition-transform duration-700"
             />

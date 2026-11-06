@@ -90,3 +90,18 @@
 .shake {
   animation: shake 0.4s ease-in-out;
 }
+
+/* Enforce strictly two lines title on every device */
+.hero-title-line-1 {
+  font-size: clamp(1.35rem, 6.2vw, 4.25rem);
+  white-space: nowrap;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.hero-title-line-2 {
+  font-size: clamp(1.65rem, 7.5vw, 4.75rem);
+  white-space: nowrap;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
