@@ -1,10 +1,28 @@
+import { useState, useEffect } from 'react';
+import { isAdminAuthenticated, ADMIN_AUTH_EVENT } from '../utils/adminAuth';
+
 interface NavbarProps {
   onOpenSearch: () => void;
   onOpenMenu: () => void;
   onOpenDrivesManager: () => void;
+  onOpenAdminPortal?: () => void;
 }
 
-export default function Navbar({ onOpenSearch, onOpenMenu, onOpenDrivesManager }: NavbarProps) {
+export default function Navbar({
+  onOpenSearch,
+  onOpenMenu,
+  onOpenDrivesManager,
+  onOpenAdminPortal,
+}: NavbarProps) {
+  const [isAdmin, setIsAdmin] = useState(false);
+
+  useEffect(() => {
+    setIsAdmin(isAdminAuthenticated());
+    const handleAuthChange = () => setIsAdmin(isAdminAuthenticated());
+    window.addEventListener(ADMIN_AUTH_EVENT, handleAuthChange);
+    return () => window.removeEventListener(ADMIN_AUTH_EVENT, handleAuthChange);
+  }, []);
+
   return (
     <header className="fixed top-0 left-0 right-0 z-40 bg-[#03060a]/80 backdrop-blur-md border-b border-white/5 transition-all">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
@@ -26,11 +44,24 @@ export default function Navbar({ onOpenSearch, onOpenMenu, onOpenDrivesManager }
 
         {/* Right Action Buttons */}
         <div className="flex items-center gap-2 sm:gap-3">
+          {/* Admin Mode Badge Button if authenticated */}
+          {isAdmin && (
+            <button
+              type="button"
+              onClick={onOpenAdminPortal}
+              className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-emerald-950/70 hover:bg-emerald-900 border border-emerald-500/40 text-emerald-300 text-xs font-mono transition-all cursor-pointer shadow-sm animate-pulse"
+              title="Admin Mode Active (Mr.) - Click to open Admin Portal"
+            >
+              <span className="material-symbols-outlined text-[14px]">shield</span>
+              <span className="hidden sm:inline">Admin Mode</span>
+            </button>
+          )}
+
           <button
             type="button"
             onClick={onOpenDrivesManager}
             className="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-medium text-slate-300 hover:text-cyan-400 transition-all hover:border-cyan-500/40"
-            title="Manage and configure Google Drive links"
+            title="Google Drive Resource Directory"
           >
             <span className="material-symbols-outlined text-[16px] text-cyan-400">folder_shared</span>
             <span>Drive Vaults</span>

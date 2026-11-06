@@ -7,6 +7,7 @@ interface MenuDrawerProps {
   onSelectCategory: (category: 'Lecture Notes' | 'Past Papers' | 'Lab Manuals') => void;
   onOpenDrivesManager: () => void;
   onOpenAbout: () => void;
+  onOpenAdminPortal?: () => void;
   onShowToast: (msg: string) => void;
 }
 
@@ -17,6 +18,7 @@ export default function MenuDrawer({
   onSelectCategory,
   onOpenDrivesManager,
   onOpenAbout,
+  onOpenAdminPortal,
 }: MenuDrawerProps) {
   if (!isOpen) return null;
 
@@ -159,8 +161,8 @@ export default function MenuDrawer({
               </div>
             </div>
 
-            {/* About */}
-            <div className="pt-2">
+            {/* About & Admin */}
+            <div className="pt-2 flex flex-col gap-2">
               <button
                 type="button"
                 onClick={() => {
@@ -170,6 +172,18 @@ export default function MenuDrawer({
                 className="text-white hover:text-cyan-400 font-semibold block transition-colors text-left cursor-pointer"
               >
                 About Everything You Need For EE
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  onOpenAdminPortal?.();
+                  onClose();
+                }}
+                className="text-slate-400 hover:text-cyan-300 text-xs font-mono flex items-center gap-1.5 transition-colors text-left cursor-pointer pt-1 border-t border-white/5"
+              >
+                <span className="material-symbols-outlined text-[15px] text-cyan-400">admin_panel_settings</span>
+                <span>Creator &amp; Admin Portal</span>
+                <span className="text-[10px] text-slate-500 font-mono ml-auto">🔒 Restricted</span>
               </button>
             </div>
           </nav>

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {
   COURSES,
   USER_DRIVE_LINKS,
@@ -6,22 +6,33 @@ import {
   saveCustomDriveOverride,
   getEffectiveDriveUrl,
 } from '../data/courses';
+import { isAdminAuthenticated, ADMIN_AUTH_EVENT } from '../utils/adminAuth';
 
 interface DriveManagerModalProps {
   isOpen: boolean;
   onClose: () => void;
   onShowToast: (msg: string) => void;
+  onOpenAdminPortal?: () => void;
 }
 
 export default function DriveManagerModal({
   isOpen,
   onClose,
   onShowToast,
+  onOpenAdminPortal,
 }: DriveManagerModalProps) {
   const [filterQuery, setFilterQuery] = useState('');
   const [editingId, setEditingId] = useState<string | null>(null);
   const [tempUrl, setTempUrl] = useState('');
   const [, setRefreshTick] = useState(0);
+  const [isAdmin, setIsAdmin] = useState(false);
+
+  useEffect(() => {
+    setIsAdmin(isAdminAuthenticated());
+    const handleAuthChange = () => setIsAdmin(isAdminAuthenticated());
+    window.addEventListener(ADMIN_AUTH_EVENT, handleAuthChange);
+    return () => window.removeEventListener(ADMIN_AUTH_EVENT, handleAuthChange);
+  }, []);
 
   if (!isOpen) return null;
 
@@ -42,11 +53,16 @@ export default function DriveManagerModal({
   };
 
   const startEdit = (id: string, currentUrl: string) => {
+    if (!isAdmin) {
+      onShowToast('🔒 Editing links is restricted to Mr. (Admin).');
+      return;
+    }
     setEditingId(id);
     setTempUrl(currentUrl);
   };
 
   const handleSave = (id: string, name: string) => {
+    if (!isAdmin) return;
     if (tempUrl.trim()) {
       saveCustomDriveOverride(id, tempUrl.trim());
       onShowToast(`Updated link for ${name}!`);
@@ -56,6 +72,7 @@ export default function DriveManagerModal({
   };
 
   const handleReset = (id: string, name: string) => {
+    if (!isAdmin) return;
     const cur = getCustomDriveOverrides();
     delete cur[id];
     localStorage.setItem('everything_you_need_for_ee_drives', JSON.stringify(cur));
@@ -212,23 +229,28 @@ export default function DriveManagerModal({
                       </span>
                     )}
 
-                    <button
-                      type="button"
-                      onClick={() => startEdit(c.id, effectiveUrl || '')}
-                      className="p-1 rounded bg-white/5 hover:bg-white/10 text-slate-400 hover:text-cyan-400"
-                      title="Edit Drive URL"
-                    >
-                      <span className="material-symbols-outlined text-[14px]">edit</span>
-                    </button>
-                    {isCustom && (
-                      <button
-                        type="button"
-                        onClick={() => handleReset(c.id, c.name)}
-                        className="p-1 rounded bg-rose-950/50 hover:bg-rose-900/60 text-rose-300"
-                        title="Reset to default URL"
-                      >
-                        <span className="material-symbols-outlined text-[14px]">restart_alt</span>
-                      </button>
+                    {/* Admin Only Actions: Edit and Reset */}
+                    {isAdmin && (
+                      <>
+                        <button
+                          type="button"
+                          onClick={() => startEdit(c.id, effectiveUrl || '')}
+                          className="p-1 rounded bg-cyan-950/60 hover:bg-cyan-900 border border-cyan-500/30 text-cyan-300 hover:text-white transition-colors cursor-pointer"
+                          title="Admin: Edit Drive URL"
+                        >
+                          <span className="material-symbols-outlined text-[14px]">edit</span>
+                        </button>
+                        {isCustom && (
+                          <button
+                            type="button"
+                            onClick={() => handleReset(c.id, c.name)}
+                            className="p-1 rounded bg-rose-950/50 hover:bg-rose-900/60 text-rose-300 transition-colors cursor-pointer"
+                            title="Reset to default URL"
+                          >
+                            <span className="material-symbols-outlined text-[14px]">restart_alt</span>
+                          </button>
+                        )}
+                      </>
                     )}
                   </div>
                 </div>
@@ -239,8 +261,8 @@ export default function DriveManagerModal({
                   </div>
                 )}
 
-                {/* Edit input block */}
-                {isEditing && (
+                {/* Edit input block - STRICTLY ADMIN ONLY */}
+                {isAdmin && isEditing && (
                   <div className="p-2 rounded-lg bg-[#070e1b] border border-cyan-500/40 flex flex-col sm:flex-row items-center gap-2">
                     <input
                       type="url"
@@ -274,9 +296,27 @@ export default function DriveManagerModal({
 
         {/* Footer */}
         <div className="flex items-center justify-between pt-3 border-t border-white/10 text-xs">
-          <span className="text-slate-400 font-mono text-[11px]">
-            Saved to browser local storage.
-          </span>
+          <div className="flex items-center gap-2">
+            {isAdmin ? (
+              <span className="text-emerald-400 font-mono text-[11px] flex items-center gap-1 bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-500/30">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                Admin Mode Active (Mr.)
+              </span>
+            ) : (
+              <button
+                type="button"
+                onClick={() => {
+                  onClose();
+                  onOpenAdminPortal?.();
+                }}
+                className="text-slate-500 hover:text-cyan-400 font-mono text-[10px] transition-colors flex items-center gap-1 cursor-pointer"
+                title="Creator login to manage drive links"
+              >
+                <span>Creator Access</span>
+                <span className="material-symbols-outlined text-[12px]">lock</span>
+              </button>
+            )}
+          </div>
           <button
             type="button"
             onClick={onClose}

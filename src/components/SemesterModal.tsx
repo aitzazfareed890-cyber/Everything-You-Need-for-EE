@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {
   COURSES,
   SEMESTERS,
@@ -6,12 +6,14 @@ import {
   getEffectiveDriveUrl,
   saveCustomDriveOverride,
 } from '../data/courses';
+import { isAdminAuthenticated, ADMIN_AUTH_EVENT } from '../utils/adminAuth';
 
 interface SemesterModalProps {
   semesterNumber: number | null;
   onClose: () => void;
   onSelectSemester: (sem: number) => void;
   onShowToast: (msg: string) => void;
+  onOpenAdminPortal?: () => void;
 }
 
 export default function SemesterModal({
@@ -19,9 +21,18 @@ export default function SemesterModal({
   onClose,
   onSelectSemester,
   onShowToast,
+  onOpenAdminPortal,
 }: SemesterModalProps) {
   const [editingCourseId, setEditingCourseId] = useState<string | null>(null);
   const [customUrlInput, setCustomUrlInput] = useState('');
+  const [isAdmin, setIsAdmin] = useState(false);
+
+  useEffect(() => {
+    setIsAdmin(isAdminAuthenticated());
+    const handleAuthChange = () => setIsAdmin(isAdminAuthenticated());
+    window.addEventListener(ADMIN_AUTH_EVENT, handleAuthChange);
+    return () => window.removeEventListener(ADMIN_AUTH_EVENT, handleAuthChange);
+  }, []);
 
   if (semesterNumber === null) return null;
 
@@ -44,11 +55,16 @@ export default function SemesterModal({
   };
 
   const startEditUrl = (course: CourseResource) => {
+    if (!isAdmin) {
+      onShowToast('🔒 Link editing is restricted to Mr. (Admin). Please unlock in Admin Portal.');
+      return;
+    }
     setEditingCourseId(course.id);
     setCustomUrlInput(getEffectiveDriveUrl(course) || '');
   };
 
   const handleSaveCustomUrl = (course: CourseResource) => {
+    if (!isAdmin) return;
     if (customUrlInput.trim()) {
       saveCustomDriveOverride(course.id, customUrlInput.trim());
       onShowToast(`Updated Google Drive link for ${course.name}!`);
@@ -179,24 +195,35 @@ export default function SemesterModal({
                         </button>
                       </>
                     ) : (
+                      /* When no drive URL is available */
+                      isAdmin ? (
+                        <button
+                          type="button"
+                          onClick={() => startEditUrl(course)}
+                          className="px-2.5 py-1 rounded-md bg-cyan-950/70 hover:bg-cyan-400 hover:text-black text-cyan-300 border border-cyan-500/30 text-xs font-medium transition-all flex items-center gap-1 cursor-pointer"
+                        >
+                          <span className="material-symbols-outlined text-[14px]">add_link</span>
+                          <span>+ Add Drive Link</span>
+                        </button>
+                      ) : (
+                        <span className="px-2.5 py-1 rounded-md bg-white/5 text-slate-500 font-mono text-[11px] border border-white/5 flex items-center gap-1">
+                          <span className="material-symbols-outlined text-[13px] text-slate-500">pending</span>
+                          <span>Drive in Queue</span>
+                        </span>
+                      )
+                    )}
+
+                    {/* Admin-only edit button */}
+                    {isAdmin && (
                       <button
                         type="button"
                         onClick={() => startEditUrl(course)}
-                        className="px-2.5 py-1 rounded-md bg-white/5 hover:bg-cyan-500/20 text-slate-300 hover:text-cyan-300 border border-white/10 text-xs font-medium transition-all flex items-center gap-1 cursor-pointer"
+                        className="p-1.5 rounded-md bg-cyan-950/50 hover:bg-cyan-900 border border-cyan-500/30 text-cyan-300 hover:text-white transition-colors cursor-pointer"
+                        title="Admin: Edit Drive link"
                       >
-                        <span className="material-symbols-outlined text-[14px]">add_link</span>
-                        <span>Add Drive Link</span>
+                        <span className="material-symbols-outlined text-[15px]">edit</span>
                       </button>
                     )}
-
-                    <button
-                      type="button"
-                      onClick={() => startEditUrl(course)}
-                      className="p-1.5 rounded-md bg-white/5 hover:bg-white/10 text-slate-400 hover:text-cyan-400 transition-colors cursor-pointer"
-                      title="Edit Drive link"
-                    >
-                      <span className="material-symbols-outlined text-[15px]">edit</span>
-                    </button>
                   </div>
                 </div>
 
@@ -204,8 +231,8 @@ export default function SemesterModal({
                   {course.description}
                 </p>
 
-                {/* Inline Edit Drive URL Field */}
-                {isEditing && (
+                {/* Inline Edit Drive URL Field - STRICTLY ADMIN ONLY */}
+                {isAdmin && isEditing && (
                   <div className="p-2.5 rounded-lg bg-[#070e1b] border border-cyan-500/40 flex flex-col sm:flex-row items-center gap-2 mt-1">
                     <input
                       type="url"
@@ -252,9 +279,30 @@ export default function SemesterModal({
 
         {/* Modal Footer */}
         <div className="flex items-center justify-between pt-3 border-t border-white/10 text-xs">
-          <span className="text-slate-400 font-mono text-[11px]">
-            UET Taxila EE Curriculum • Separate Subject Drives
-          </span>
+          <div className="flex items-center gap-3">
+            <span className="text-slate-400 font-mono text-[11px]">
+              UET Taxila EE Curriculum • Separate Subject Drives
+            </span>
+            {isAdmin ? (
+              <span className="text-emerald-400 font-mono text-[11px] flex items-center gap-1 bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-500/30">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                Admin Active (Mr.)
+              </span>
+            ) : (
+              <button
+                type="button"
+                onClick={() => {
+                  onClose();
+                  onOpenAdminPortal?.();
+                }}
+                className="text-slate-500 hover:text-cyan-400 font-mono text-[10px] transition-colors flex items-center gap-1 cursor-pointer"
+                title="Creator login to edit drive links"
+              >
+                <span>Admin Login</span>
+                <span className="material-symbols-outlined text-[12px]">lock</span>
+              </button>
+            )}
+          </div>
           <button
             type="button"
             onClick={onClose}

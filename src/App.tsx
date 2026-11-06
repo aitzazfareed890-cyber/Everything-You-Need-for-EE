@@ -12,6 +12,7 @@ import SearchModal from './components/SearchModal';
 import MenuDrawer from './components/MenuDrawer';
 import DriveManagerModal from './components/DriveManagerModal';
 import AboutModal from './components/AboutModal';
+import AdminPortalModal from './components/AdminPortalModal';
 
 export default function App() {
   const [selectedSemester, setSelectedSemester] = useState<number | null>(null);
@@ -20,6 +21,7 @@ export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDrivesManagerOpen, setIsDrivesManagerOpen] = useState(false);
   const [isAboutOpen, setIsAboutOpen] = useState(false);
+  const [isAdminPortalOpen, setIsAdminPortalOpen] = useState(false);
   const [toastMessage, setToastMessage] = useState<string | null>(null);
 
   const showToast = useCallback((msg: string) => {
@@ -41,12 +43,18 @@ export default function App() {
         e.preventDefault();
         setIsSearchOpen(true);
       }
+      // Ctrl+Shift+A opens Creator Admin Portal
+      if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key.toLowerCase() === 'a') {
+        e.preventDefault();
+        setIsAdminPortalOpen(true);
+      }
       if (e.key === 'Escape') {
         setIsSearchOpen(false);
         setSelectedSemester(null);
         setIsMenuOpen(false);
         setIsDrivesManagerOpen(false);
         setIsAboutOpen(false);
+        setIsAdminPortalOpen(false);
       }
     };
 
@@ -74,6 +82,7 @@ export default function App() {
         }}
         onOpenMenu={() => setIsMenuOpen(true)}
         onOpenDrivesManager={() => setIsDrivesManagerOpen(true)}
+        onOpenAdminPortal={() => setIsAdminPortalOpen(true)}
       />
 
       {/* Main Content */}
@@ -96,7 +105,10 @@ export default function App() {
       </main>
 
       {/* Footer */}
-      <Footer onOpenAbout={() => setIsAboutOpen(true)} />
+      <Footer
+        onOpenAbout={() => setIsAboutOpen(true)}
+        onOpenAdminPortal={() => setIsAdminPortalOpen(true)}
+      />
 
       {/* Floating Persistent Quote Widget */}
       <QuoteWidget />
@@ -107,6 +119,7 @@ export default function App() {
         onClose={() => setSelectedSemester(null)}
         onSelectSemester={handleSelectSemester}
         onShowToast={showToast}
+        onOpenAdminPortal={() => setIsAdminPortalOpen(true)}
       />
 
       <SearchModal
@@ -124,6 +137,7 @@ export default function App() {
         onSelectCategory={handleSelectCategory}
         onOpenDrivesManager={() => setIsDrivesManagerOpen(true)}
         onOpenAbout={() => setIsAboutOpen(true)}
+        onOpenAdminPortal={() => setIsAdminPortalOpen(true)}
         onShowToast={showToast}
       />
 
@@ -131,11 +145,18 @@ export default function App() {
         isOpen={isDrivesManagerOpen}
         onClose={() => setIsDrivesManagerOpen(false)}
         onShowToast={showToast}
+        onOpenAdminPortal={() => setIsAdminPortalOpen(true)}
       />
 
       <AboutModal
         isOpen={isAboutOpen}
         onClose={() => setIsAboutOpen(false)}
+      />
+
+      <AdminPortalModal
+        isOpen={isAdminPortalOpen}
+        onClose={() => setIsAdminPortalOpen(false)}
+        onShowToast={showToast}
       />
 
       {/* Toast Notification Floating Pill */}
