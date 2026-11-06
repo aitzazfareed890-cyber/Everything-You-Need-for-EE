@@ -9,8 +9,6 @@ export interface CourseResource {
   notesCount: string;
   papersCount: string;
   labsCount: string;
-  courseTeacher?: string;
-  labTeacher?: string;
   description: string;
   topics: string[];
 }
@@ -43,7 +41,6 @@ export const COURSES: CourseResource[] = [
     notesCount: 'Full Notes',
     papersCount: 'Past Papers',
     labsCount: 'Theory',
-    courseTeacher: 'Dr. Khalida Mubeen (VFD)',
     description: 'Optics, interference, diffraction, quantum concepts, band theory of solids, semiconductor physics, and laser fundamentals.',
     topics: ['Optics & Interference', 'Diffraction', 'Semiconductors', 'Lasers', 'Modern Physics']
   },
@@ -58,7 +55,6 @@ export const COURSES: CourseResource[] = [
     notesCount: 'Full Notes',
     papersCount: 'Past Papers',
     labsCount: 'Theory',
-    courseTeacher: 'Ms. Fakhira Liaqat (VFD)',
     description: 'Limits, continuity, techniques of differentiation and integration, polar coordinates, vectors, analytical geometry, and multivariable basics.',
     topics: ['Limits & Continuity', 'Integration Techniques', 'Analytical Geometry', 'Vector Calculus', 'Infinite Series']
   },
@@ -73,8 +69,6 @@ export const COURSES: CourseResource[] = [
     notesCount: 'Full Notes',
     papersCount: 'Past Papers',
     labsCount: 'Computer Simulation (ICT-L)',
-    courseTeacher: 'Dr. Aamir Rashid (A, B, C) / Dr. Nouman Qamar (D)',
-    labTeacher: 'Dr. Nouman Qamar (D), Engr. Ghulam Mujtaba (A, B, C)',
     description: 'Information and communication technology, computer systems, operating systems, networking fundamentals, software tools, and simulation.',
     topics: ['Computer Architecture', 'Operating Systems', 'Networking Basics', 'Simulation Tools', 'Digital Tools']
   },
@@ -89,7 +83,6 @@ export const COURSES: CourseResource[] = [
     notesCount: 'Full Notes',
     papersCount: 'Past Papers',
     labsCount: 'Code Tasks',
-    courseTeacher: 'Faculty of Computer Science / EE',
     description: 'Programming fundamentals in C++, control structures, functions, arrays, pointers, memory allocation, and problem-solving.',
     topics: ['C++ Syntax', 'Pointers & Memory', 'Loops & Decisions', 'Arrays & Strings', 'Functions & Recursion']
   },
@@ -104,7 +97,6 @@ export const COURSES: CourseResource[] = [
     notesCount: 'Full Notes',
     papersCount: 'Past Papers',
     labsCount: 'Theory',
-    courseTeacher: 'Engr. Abdul Mobeen (MED)',
     description: 'Thermodynamics fundamentals, heat transfer, power cycles, IC engines, fluid mechanics principles, and mechanical transmission systems.',
     topics: ['Thermodynamics Laws', 'Heat Transfer', 'IC Engines', 'Fluid Mechanics', 'Power Transmission']
   },
@@ -119,7 +111,6 @@ export const COURSES: CourseResource[] = [
     notesCount: 'Manuals & Guides',
     papersCount: 'Viva Guides',
     labsCount: 'Workshop & Projects (WP-L)',
-    labTeacher: 'Engr. Tanveer (A2, B2, D1, D2), Engr. M. Kashif (C1, C2, B1), Engr. Shuja Irfan (A1)',
     description: 'Practical hands-on training in machine shop, carpentry, fitting, welding, electrical wiring, and engineering fabrication safety.',
     topics: ['Fitting Shop', 'Carpentry Shop', 'Welding & Soldering', 'Machine Tools', 'Safety Protocols']
   },
@@ -134,7 +125,6 @@ export const COURSES: CourseResource[] = [
     notesCount: 'Full Notes',
     papersCount: 'Past Papers',
     labsCount: 'Theory',
-    courseTeacher: 'Prof. Dr. Salman Amin (A+B, C+D)',
     description: 'Industrial safety principles, hazard identification, risk assessment, electrical hazard mitigation, emergency protocols, and OSHA standards.',
     topics: ['Hazard Identification', 'Risk Assessment', 'Electrical Safety', 'Emergency Response', 'Industrial Standards']
   },
@@ -149,7 +139,6 @@ export const COURSES: CourseResource[] = [
     notesCount: 'Full Notes',
     papersCount: 'Past Papers',
     labsCount: 'Theory',
-    courseTeacher: 'Mufti Khalil Ur Rehman (VFD)',
     description: 'Study of designated Surahs, translation, context of revelation, ethical lessons, and practical teachings for professional life.',
     topics: ['Tafseer & Translation', 'Ethical Lessons', 'Context of Revelation', 'Personal Character']
   },
@@ -163,7 +152,6 @@ export const COURSES: CourseResource[] = [
     notesCount: 'Full Notes',
     papersCount: 'Past Papers',
     labsCount: 'Theory',
-    courseTeacher: 'Mr. M. Arslan (VFD)',
     description: 'Grammar essentials, technical vocabulary, comprehension, formal letter writing, technical summaries, and presentation skills.',
     topics: ['Technical Writing', 'Grammar Essentials', 'Comprehension', 'Presentation Delivery']
   },
@@ -179,8 +167,6 @@ export const COURSES: CourseResource[] = [
     notesCount: 'Full Notes',
     papersCount: 'Past Papers',
     labsCount: 'Basic Electrical Eng (LCA-L)',
-    courseTeacher: 'Prof. Dr. Shabbir Majeed Ch (A), Dr. Sh. Saaqib Haroon (B), Engr. Muhammad Usman (C), Dr. Muhammad Rafiq (D)',
-    labTeacher: 'Engr. Muhammad Usman (A, C), Dr. Muhammad Rafiq (B, D)',
     description: 'Ohm law, Kirchhoff laws, nodal and mesh analysis, network theorems (Thevenin, Norton, Superposition, Maximum Power Transfer), RL/RC/RLC transient response, and sinusoidal steady-state AC analysis.',
     topics: ['Nodal & Mesh Analysis', 'Thevenin & Norton Theorems', 'Superposition Principle', 'RLC Transient Circuits', 'AC Steady-State Analysis']
   },
@@ -194,8 +180,6 @@ export const COURSES: CourseResource[] = [
     notesCount: 'Full Notes',
     papersCount: 'Past Papers',
     labsCount: 'Digital Systems (DLD-L)',
-    courseTeacher: 'Dr. Faisal Siddiq',
-    labTeacher: 'Mr. Imran Shoukat',
     description: 'Number systems, Boolean algebra, Karnaugh maps (K-map), combinational circuits (multiplexers, decoders, adders), flip-flops (JK, D, T), registers, synchronous counters, and finite state machines (FSM).',
     topics: ['K-Map Minimization', 'Combinational Logic', 'Flip-Flops & Latches', 'Synchronous Counters', 'FSM State Diagrams']
   },
@@ -209,7 +193,6 @@ export const COURSES: CourseResource[] = [
     notesCount: 'CAD Tutorials',
     papersCount: 'Drawing Tasks',
     labsCount: 'Power Systems Simulation (ED-L)',
-    labTeacher: 'Engr. Shahwar Ali',
     description: 'AutoCAD electrical drafting, single-line diagrams (SLD), schematic layouts, projection techniques, electrical substation symbols, wiring diagrams, and CAD dimensioning standards.',
     topics: ['AutoCAD Electrical', 'Single Line Diagrams (SLD)', 'Schematic Layouts', 'Orthographic Projection', 'Substation Standards']
   },
@@ -223,8 +206,6 @@ export const COURSES: CourseResource[] = [
     notesCount: 'Full Notes',
     papersCount: 'Past Papers',
     labsCount: 'Computer Simulation (CP-L)',
-    courseTeacher: 'Dr. Furqan Shaukat (A, C), Dr. M. Laiq Ur Rahman (B, D)',
-    labTeacher: 'Engr. Ghulam Mujtaba',
     description: 'Advanced C++ and object-oriented programming (OOP), classes, objects, constructor/destructor, inheritance, polymorphism, operator overloading, dynamic pointers, and file streaming.',
     topics: ['OOP Principles', 'Classes & Objects', 'Inheritance & Polymorphism', 'Dynamic Memory Management', 'File Streaming']
   },
@@ -238,7 +219,6 @@ export const COURSES: CourseResource[] = [
     notesCount: 'Full Notes',
     papersCount: 'Past Papers',
     labsCount: 'Theory',
-    courseTeacher: 'Dr. Zaffer Elahi (MSD)',
     description: 'First order ordinary differential equations, separable, exact, and linear ODEs, higher order linear ODEs with constant coefficients, undetermined coefficients, variation of parameters, and Laplace transforms.',
     topics: ['First Order ODEs', 'Exact Equations', 'Homogeneous Linear ODEs', 'Variation of Parameters', 'Laplace Transforms']
   },
@@ -252,7 +232,6 @@ export const COURSES: CourseResource[] = [
     notesCount: 'Full Notes',
     papersCount: 'Past Papers',
     labsCount: 'Theory',
-    courseTeacher: 'Ms. Ayesha Syed (VFD)',
     description: 'Historical evolution of the two-nation theory, Pakistan movement, political history, structure and fundamental rights under the 1973 Constitution, parliamentary system, and contemporary governance.',
     topics: ['Ideology of Pakistan', '1973 Constitution', 'Fundamental Human Rights', 'Constitutional Amendments', 'National Institutions']
   },
@@ -268,8 +247,6 @@ export const COURSES: CourseResource[] = [
     notesCount: 'Full Notes',
     papersCount: 'Past Papers',
     labsCount: 'Basic Electrical Eng (ENA-L)',
-    courseTeacher: 'Dr. Saaqib Haroon (B), Dr. Muhammad Rafiq (C, D), Dr. Hamza Ahmad (A)',
-    labTeacher: 'Dr. Muhammad Rafiq (B), Dr. Hamza Ahmad (C, D), Hafiz Kashif (A)',
     description: 'AC sinusoidal steady-state analysis, phasors, impedance, frequency response, resonance, three-phase systems, two-port networks, and coupled circuits.',
     topics: ['Phasors & AC Power', 'Resonance', 'Three-Phase Systems', 'Two-Port Networks', 'Coupled Circuits']
   },
@@ -283,8 +260,6 @@ export const COURSES: CourseResource[] = [
     notesCount: 'Full Notes',
     papersCount: 'Past Papers',
     labsCount: 'Electronics Lab (EDC-L)',
-    courseTeacher: 'Prof. Dr. Shabbir Majeed Ch (C), Engr. Usman (B), Dr. Ghulam Ali (A, D)',
-    labTeacher: 'Engr. Usman (A1, B1), Engr. Abubakar Waqas (C1, C2), Engr. Farzana (A2, B2, D1, D2)',
     description: 'BJT biasing and small-signal AC modeling, Field Effect Transistors (JFET, MOSFET), amplifier configurations, and frequency response.',
     topics: ['BJT Small Signal Analysis', 'MOSFET Characteristics', 'Amplifier Topologies', 'Frequency Response']
   },
@@ -298,8 +273,6 @@ export const COURSES: CourseResource[] = [
     notesCount: 'Full Notes',
     papersCount: 'Past Papers',
     labsCount: 'Digital Systems Lab (M&I-L)',
-    courseTeacher: 'Prof. Dr. Gulistan Raja / Dr. Faisal Siddiq (A), Dr. Faisal Siddiq (B, C, D)',
-    labTeacher: 'Engr. Komal Munir (D1, D2, C1), Engr. Waqas Shah (C2, A2, B2), Imran Shaukat (A1, B1)',
     description: 'Intel 8086 microprocessor internal architecture, assembly language programming, memory segmentation, interrupts, and peripheral interfacing (8255 PPI, timers).',
     topics: ['8086 Architecture', 'Assembly Instructions', 'Memory Segmentation', '8255 PPI Interfacing', 'Hardware Interrupts']
   },
@@ -313,7 +286,6 @@ export const COURSES: CourseResource[] = [
     notesCount: 'Full Notes',
     papersCount: 'Past Papers',
     labsCount: 'Theory',
-    courseTeacher: 'Ms. Haleema Sadia (Maths)',
     description: 'Complex functions, Cauchy-Riemann equations, analytic functions, contour integration, Cauchy integral formula, residue theorem, and Fourier/Z transforms.',
     topics: ['Cauchy-Riemann Equations', 'Contour Integration', 'Residue Theorem', 'Z-Transforms', 'Conformal Mapping']
   },
@@ -327,7 +299,6 @@ export const COURSES: CourseResource[] = [
     notesCount: 'Full Notes',
     papersCount: 'Past Papers',
     labsCount: 'Theory',
-    courseTeacher: 'Dr. Irfan Saghir (VFD)',
     description: 'Islamic ethical philosophy, Quranic worldview, Seerah of Prophet Muhammad (PBUH), and professional ethics in engineering.',
     topics: ['Engineering Ethics', 'Seerah Studies', 'Islamic Jurisprudence', 'Moral Responsibility']
   },
@@ -343,7 +314,6 @@ export const COURSES: CourseResource[] = [
     notesCount: 'Comprehensive Notes',
     papersCount: 'Past Papers',
     labsCount: 'MATLAB Lab',
-    courseTeacher: 'Dept. of Electrical Engineering',
     description: 'Continuous and discrete-time signals, Linear Time-Invariant systems, convolution integral/sum, Fourier series, CTFT, DTFT, and sampling theorem.',
     topics: ['Convolution', 'LTI Systems', 'Fourier Analysis', 'Sampling Theorem', 'Frequency Response']
   },
@@ -357,7 +327,6 @@ export const COURSES: CourseResource[] = [
     notesCount: 'Derivations & Notes',
     papersCount: 'Past Papers',
     labsCount: 'Theory',
-    courseTeacher: 'Dept. of Electrical Engineering',
     description: 'Electrostatics, Gauss law, magnetostatics, Biot-Savart law, Ampere law, Maxwell equations, and plane electromagnetic wave propagation.',
     topics: ['Coulomb & Gauss Laws', 'Biot-Savart Law', 'Maxwell Equations', 'Poynting Vector', 'Wave Propagation']
   },
@@ -371,7 +340,6 @@ export const COURSES: CourseResource[] = [
     notesCount: 'Theory & Solved Qs',
     papersCount: 'Past Papers',
     labsCount: 'Machines Lab',
-    courseTeacher: 'Dept. of Electrical Engineering',
     description: 'Magnetic circuits, single-phase and three-phase transformers, DC generators and DC motors characteristics, starting, and speed control.',
     topics: ['Transformers Equivalent Circuit', 'Transformer Tests', 'DC Motors', 'DC Generators', 'Speed Control']
   },
@@ -387,7 +355,6 @@ export const COURSES: CourseResource[] = [
     notesCount: 'Lecture Notes',
     papersCount: 'Past Papers',
     labsCount: 'Simulink Lab',
-    courseTeacher: 'Dept. of Electrical Engineering',
     description: 'Power semiconductor devices (SCR, MOSFET, IGBT), controlled rectifiers, DC-DC converters (buck, boost, buck-boost), inverters, and PWM control.',
     topics: ['Buck-Boost Converters', 'Inverter Modulation', 'SCR & Triac', 'Gate Drive Circuits']
   },
@@ -401,7 +368,6 @@ export const COURSES: CourseResource[] = [
     notesCount: 'Full Notes',
     papersCount: 'Past Papers',
     labsCount: 'MATLAB Lab',
-    courseTeacher: 'Dept. of Electrical Engineering',
     description: 'Analog modulation (AM, FM, PM), superheterodyne receiver, noise analysis in communication, and introduction to digital baseband transmission.',
     topics: ['AM & FM Modulation', 'Receiver Topologies', 'SNR & Noise Analysis', 'Baseband Transmission']
   },
@@ -415,7 +381,6 @@ export const COURSES: CourseResource[] = [
     notesCount: 'Lecture Notes',
     papersCount: 'Past Papers',
     labsCount: 'Machines Lab',
-    courseTeacher: 'Dept. of Electrical Engineering',
     description: 'Three-phase induction motors, equivalent circuits, torque-speed characteristics, synchronous generators and motors, and alternator synchronization.',
     topics: ['Induction Motors', 'Torque-Slip Curves', 'Synchronous Alternators', 'V-Curves']
   },
@@ -431,7 +396,6 @@ export const COURSES: CourseResource[] = [
     notesCount: 'Full Notes',
     papersCount: 'Past Papers',
     labsCount: 'MATLAB Lab',
-    courseTeacher: 'Dept. of Electrical Engineering',
     description: 'Mathematical modeling of physical systems, transfer functions, block diagrams, Root Locus, Bode plots, Nyquist criterion, and PID tuning.',
     topics: ['Transfer Functions', 'Root Locus', 'Bode Stability Margins', 'PID Controller Design']
   },
@@ -445,7 +409,6 @@ export const COURSES: CourseResource[] = [
     notesCount: 'Notes Bundle',
     papersCount: 'Past Papers',
     labsCount: 'Simulation Lab',
-    courseTeacher: 'Dept. of Electrical Engineering',
     description: 'Transmission line parameters, admittance and impedance matrices, power flow analysis (Gauss-Seidel, Newton-Raphson), and symmetrical faults.',
     topics: ['Line Modeling', 'Power Flow Analysis', 'Y-Bus Matrix', 'Symmetrical Fault Analysis']
   },
@@ -461,7 +424,6 @@ export const COURSES: CourseResource[] = [
     notesCount: 'Full Notes',
     papersCount: 'Past Papers',
     labsCount: 'DSP Lab',
-    courseTeacher: 'Dept. of Electrical Engineering',
     description: 'Discrete Fourier Transform, Fast Fourier Transform algorithms, FIR filter design, IIR filter design via bilinear transformation, and DSP hardware.',
     topics: ['DFT & FFT', 'FIR Window Method', 'IIR Bilinear Transform', 'Filter Structures']
   },
@@ -475,7 +437,6 @@ export const COURSES: CourseResource[] = [
     notesCount: 'Templates & Guides',
     papersCount: 'Proposal Archive',
     labsCount: 'Project Lab',
-    courseTeacher: 'FYP Committee • UET Taxila',
     description: 'Engineering design proposal, problem formulation, literature survey, circuit design, component selection, and preliminary defense.',
     topics: ['Project Proposal', 'Literature Survey', 'System Architecture', 'Design Defense']
   },
@@ -491,7 +452,6 @@ export const COURSES: CourseResource[] = [
     notesCount: 'Thesis Templates',
     papersCount: 'Defense Prep',
     labsCount: 'Hardware Prototype',
-    courseTeacher: 'FYP Committee • UET Taxila',
     description: 'Hardware prototype implementation, PCB fabrication, microcontroller firmware, testing, comprehensive thesis report, and final viva voce.',
     topics: ['Hardware Prototype', 'Testing & Verification', 'Thesis Report', 'Final Viva Voce']
   }
@@ -625,8 +585,6 @@ export function filterCourses(query: string, semester?: number): CourseResource[
       course.shortName.toLowerCase().includes(trimmed) ||
       course.code.toLowerCase().includes(trimmed) ||
       course.description.toLowerCase().includes(trimmed) ||
-      (course.courseTeacher && course.courseTeacher.toLowerCase().includes(trimmed)) ||
-      (course.labTeacher && course.labTeacher.toLowerCase().includes(trimmed)) ||
       course.topics.some((t) => t.toLowerCase().includes(trimmed))
     );
   });

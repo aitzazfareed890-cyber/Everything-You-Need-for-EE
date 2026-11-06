@@ -160,16 +160,6 @@ export default function SemesterModal({
                     <h4 className="text-sm font-semibold text-white group-hover:text-cyan-300 transition-colors">
                       {course.name}
                     </h4>
-                    {course.courseTeacher && (
-                      <p className="text-[11px] text-slate-400 mt-0.5">
-                        <span className="text-slate-500 font-mono">Teacher:</span> {course.courseTeacher}
-                      </p>
-                    )}
-                    {course.labTeacher && (
-                      <p className="text-[11px] text-slate-400 mt-0.5">
-                        <span className="text-slate-500 font-mono">Lab:</span> {course.labTeacher}
-                      </p>
-                    )}
                   </div>
 
                   {/* Actions for this subject */}

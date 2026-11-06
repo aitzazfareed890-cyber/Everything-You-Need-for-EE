@@ -66,7 +66,7 @@ export default function SearchModal({
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search courses, teachers, codes (e.g. AP, BME, ICT, Calculus, ENA, EDC)..."
+            placeholder="Search courses, codes, topics (e.g. AP, BME, ICT, Calculus, ENA, EDC)..."
             className="w-full bg-transparent text-sm md:text-base text-white placeholder-slate-500 focus:outline-none"
           />
           {query && (
@@ -174,11 +174,6 @@ export default function SearchModal({
                         {course.name}
                       </p>
                     </div>
-                    {course.courseTeacher && (
-                      <p className="text-[11px] text-slate-400 mb-1">
-                        Teacher: {course.courseTeacher}
-                      </p>
-                    )}
                     <div className="flex items-center gap-2 text-[10px] text-slate-400 font-mono flex-wrap">
                       <span className="text-cyan-400 font-medium">Semester {course.semester}</span>
                       <span>•</span>

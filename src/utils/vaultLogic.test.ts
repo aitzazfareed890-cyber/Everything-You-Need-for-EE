@@ -60,42 +60,36 @@ test('Semester 2 contains courses from official Spring 2026 timetable (25-EE)', 
   assert.equal(lca?.name, 'Linear Circuit Analysis');
   assert.equal(lca?.code, 'EE-121');
   assert.equal(lca?.creditHours, '3+1');
-  assert.ok(lca?.courseTeacher?.includes('Prof. Dr. Shabbir Majeed Ch'));
 
   const dld = sem2Courses.find((c) => c.shortName === 'DLD');
   assert.ok(dld, 'Digital Logic Design (DLD) must exist');
   assert.equal(dld?.name, 'Digital Logic Design');
   assert.equal(dld?.code, 'EE-122');
   assert.equal(dld?.creditHours, '3+1');
-  assert.ok(dld?.courseTeacher?.includes('Dr. Faisal Siddiq'));
 
   const ed = sem2Courses.find((c) => c.shortName === 'ED');
   assert.ok(ed, 'Engineering Drawing Lab (ED) must exist');
   assert.equal(ed?.name, 'Engineering Drawing Lab');
   assert.equal(ed?.code, 'EE-123L');
   assert.equal(ed?.creditHours, '0+1');
-  assert.ok(ed?.labTeacher?.includes('Engr. Shahwar Ali'));
 
   const cp = sem2Courses.find((c) => c.shortName === 'CP');
   assert.ok(cp, 'Computer Programming (CP) must exist');
   assert.equal(cp?.name, 'Computer Programming');
   assert.equal(cp?.code, 'CS-124');
   assert.equal(cp?.creditHours, '3+1');
-  assert.ok(cp?.courseTeacher?.includes('Dr. Furqan Shaukat'));
 
   const de = sem2Courses.find((c) => c.shortName === 'DE');
   assert.ok(de, 'Differential Equations (DE) must exist');
   assert.equal(de?.name, 'Differential Equations');
   assert.equal(de?.code, 'GS-125');
   assert.equal(de?.creditHours, '3+0');
-  assert.ok(de?.courseTeacher?.includes('Dr. Zaffer Elahi'));
 
   const icp = sem2Courses.find((c) => c.shortName === 'ICP');
   assert.ok(icp, 'Ideology and Constitution of Pakistan (ICP) must exist');
   assert.equal(icp?.name, 'Ideology and Constitution of Pakistan');
   assert.equal(icp?.code, 'HS-126');
   assert.equal(icp?.creditHours, '2+0');
-  assert.ok(icp?.courseTeacher?.includes('Ms. Ayesha Syed'));
 });
 
 test('Semester 3 contains courses from official Fall 2026 timetable', () => {
@@ -114,14 +108,14 @@ test('Semester 3 contains courses from official Fall 2026 timetable', () => {
   assert.equal(mi?.name, 'Microprocessors and Interfacing');
 });
 
-test('filterCourses works for course names, short codes, and faculty teachers', () => {
+test('filterCourses works for course names, short codes, and topics', () => {
   const apResults = filterCourses('Applied Physics');
   assert.ok(apResults.length >= 1);
 
   const bmeResults = filterCourses('BME');
   assert.equal(bmeResults[0].shortName, 'BME');
 
-  const teacherResults = filterCourses('Khalida Mubeen');
-  assert.ok(teacherResults.length >= 1);
-  assert.equal(teacherResults[0].shortName, 'AP');
+  const topicResults = filterCourses('Kirchhoff');
+  assert.ok(topicResults.length >= 1);
+  assert.equal(topicResults[0].shortName, 'LCA');
 });

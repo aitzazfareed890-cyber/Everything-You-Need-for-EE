@@ -34,10 +34,12 @@ export default function Hero({ onSelectSemester, onSelectCategory, onOpenDrivesM
           UET TAXILA • ELECTRICAL ENGINEERING
         </div>
 
-        {/* Hero Main Title - strictly two lines */}
-        <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white mb-4 font-display drop-shadow-[0_4px_24px_rgba(0,0,0,0.9)] flex flex-col items-center leading-[1.1]">
-          <span>Everything You Need</span>
-          <span className="text-cyan-400 drop-shadow-[0_0_28px_rgba(34,211,238,0.65)] mt-1">
+        {/* Hero Main Title - strictly two lines on EVERY device */}
+        <h1 className="w-full font-extrabold tracking-tight text-white mb-4 font-display drop-shadow-[0_4px_24px_rgba(0,0,0,0.9)] flex flex-col items-center leading-none">
+          <span className="block text-[clamp(1.5rem,6.8vw,4.5rem)] whitespace-nowrap leading-tight">
+            Everything You Need
+          </span>
+          <span className="block text-[clamp(1.75rem,7.8vw,4.75rem)] text-cyan-400 drop-shadow-[0_0_28px_rgba(34,211,238,0.65)] whitespace-nowrap leading-tight mt-1">
             For EE
           </span>
         </h1>

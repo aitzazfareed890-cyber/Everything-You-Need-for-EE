@@ -1,4 +1,7 @@
 import { COURSES, USER_DRIVE_LINKS } from '../data/courses';
+import lectureNotesImg from '../assets/images/lecture_notes_vault_1793999044455.jpg';
+import pastPapersImg from '../assets/images/past_papers_vault_1793999060558.jpg';
+import labManualsImg from '../assets/images/lab_manuals_vault_1793999076660.jpg';
 
 interface CoreVaultsProps {
   onOpenCategory: (category: 'Lecture Notes' | 'Past Papers' | 'Lab Manuals') => void;
@@ -35,9 +38,9 @@ export default function CoreVaults({ onOpenCategory, onSelectSemester, onShowToa
         {/* Card 1: Lecture Notes */}
         <div className="group card-vault relative rounded-2xl overflow-hidden min-h-[380px] flex flex-col justify-end p-6 border border-white/10 hover:border-cyan-400/60 bg-[#080e18]">
           <img
-            src="https://lh3.googleusercontent.com/aida/AEtjO1VzJ-khBpQ6Dp4sJyLnZRySMBUmZ1cdJXyJPwMSf_5ITub_Nkak3FkOYYKNqVuDrISY330cNj2BXQ91bZ1GyY3l0-6CpczFkcZx2fN916OB0cEaTYq4exRT6htFthIRSAsBz9ZmdIb3SznYcli0Lid74PCc7BulRdW9HiEQWWDRMfHCGbyLeKOdQM1c_92D3mb57ifKYyo8QCh9eoqBS0H47EqgYQJ40PZoojTGI0vMz7l8o-qGUG1YVQ"
-            alt="Lecture Notes textbook desk"
-            className="absolute inset-0 w-full h-full object-cover filter brightness-[0.38] contrast-105 group-hover:scale-105 transition-transform duration-700"
+            src={lectureNotesImg}
+            alt="Lecture Notes with circuit analysis and engineering textbooks"
+            className="absolute inset-0 w-full h-full object-cover filter brightness-[0.45] contrast-105 group-hover:scale-105 transition-transform duration-700"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/75 to-transparent" />
           <div className="relative z-10 flex flex-col items-start">
@@ -74,9 +77,9 @@ export default function CoreVaults({ onOpenCategory, onSelectSemester, onShowToa
         {/* Card 2: Past Papers & Solutions */}
         <div className="group card-vault relative rounded-2xl overflow-hidden min-h-[380px] flex flex-col justify-end p-6 border border-white/10 hover:border-amber-400/60 bg-[#080e18]">
           <img
-            src="https://lh3.googleusercontent.com/aida/AEtjO1VB9qsN-77M8xUAM2PmsGiVArC5j71P33G907zU1GSc3qxFnC7uBsXTP12kkduS24lbXfWlyKoumCerhgw84Zbui7KJqijSg9RSh30ZdlGUIWnZV65ShXbmYq1YzOOeiq_ABAJ-bZlK-nQOJDSgT6z2RJjTsUHKJZ5b4642mdFb3P5eQwcwMM4UoLs1580pPBt9dWGKnXtGkADYoHvZ9vNL6meHGSU_Fp9v8ZETJ7-6ZHlQRvFOo8z7Sg"
-            alt="Past papers and solutions desk"
-            className="absolute inset-0 w-full h-full object-cover filter brightness-[0.38] contrast-105 group-hover:scale-105 transition-transform duration-700"
+            src={pastPapersImg}
+            alt="Past papers, step-by-step circuit calculus solutions, and engineering calculator"
+            className="absolute inset-0 w-full h-full object-cover filter brightness-[0.45] contrast-105 group-hover:scale-105 transition-transform duration-700"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/75 to-transparent" />
           <div className="relative z-10 flex flex-col items-start">
@@ -113,9 +116,9 @@ export default function CoreVaults({ onOpenCategory, onSelectSemester, onShowToa
         {/* Card 3: Lab Manuals & Code */}
         <div className="group card-vault relative rounded-2xl overflow-hidden min-h-[380px] flex flex-col justify-end p-6 border border-white/10 hover:border-sky-400/60 bg-[#080e18]">
           <img
-            src="https://lh3.googleusercontent.com/aida/AEtjO1XWweM8caGigdzQBLWjSJbpUP5sGXU1Ut2uBiOPWSTvFuDerV8zMnCDY7hCSc2qAzUycf9JxRCYhXnu_medzzNOWMmEE_NsrvveTs9DXc-j09mli4c-hFAZQKP3JPFaTA86T_UVYL6-h1xpwbtUaHtxLDC7PvVzJLXVbt3IGRCm3j1Y33LYwIbepSN7LrG-G5oGA3--DSDx0p4-_8bXk4tkvV3-SrX94-JgEXg8rRZV9CyGD8lJROu3phY"
-            alt="Lab Manuals and library study"
-            className="absolute inset-0 w-full h-full object-cover filter brightness-[0.38] contrast-105 group-hover:scale-105 transition-transform duration-700"
+            src={labManualsImg}
+            alt="Electronics hardware lab bench, oscilloscope waveforms, breadboard, and code terminal"
+            className="absolute inset-0 w-full h-full object-cover filter brightness-[0.45] contrast-105 group-hover:scale-105 transition-transform duration-700"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/75 to-transparent" />
           <div className="relative z-10 flex flex-col items-start">
