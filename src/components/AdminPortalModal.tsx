@@ -155,22 +155,12 @@ export default function AdminPortalModal({
           </button>
         </div>
 
-        {/* Not Authenticated: Login View */}
+        {/* Not Authenticated: Minimal Discreet Login View */}
         {!isAuth ? (
-          <form onSubmit={handleLogin} className="flex flex-col gap-4 py-2">
-            <div className="p-4 rounded-xl bg-cyan-950/20 border border-cyan-500/20 text-xs text-slate-300 leading-relaxed">
-              <p className="font-semibold text-white mb-1">
-                🔒 Protected Creator Area
-              </p>
-              <p>
-                Link editing is restricted so normal students and mobile visitors cannot tamper with or insert unauthorized links.
-                Enter your admin master passkey to unlock editing on this device.
-              </p>
-            </div>
-
+          <form onSubmit={handleLogin} className="flex flex-col gap-4 py-3">
             <div className="flex flex-col gap-1.5">
               <label htmlFor="admin-passcode" className="text-xs font-mono text-slate-300">
-                Admin Master Passcode
+                Passcode
               </label>
               <input
                 id="admin-passcode"
@@ -180,24 +170,25 @@ export default function AdminPortalModal({
                   setPasscodeInput(e.target.value);
                   setErrorMsg('');
                 }}
-                placeholder="Enter admin passcode (e.g., aitzaz2026)"
-                className="w-full bg-black/60 border border-white/10 focus:border-cyan-400 rounded-lg px-3 py-2 text-sm text-white focus:outline-none font-mono"
+                placeholder="••••••••"
+                className="w-full bg-black/70 border border-white/10 focus:border-cyan-400 rounded-lg px-3.5 py-2.5 text-sm text-white focus:outline-none font-mono tracking-widest"
                 autoFocus
+                autoComplete="current-password"
               />
               {errorMsg && (
                 <p className="text-rose-400 text-xs font-mono mt-1">⚠️ {errorMsg}</p>
               )}
             </div>
 
-            <div className="flex items-center justify-between pt-2">
-              <div className="text-[11px] text-slate-500 font-mono">
-                Creator: Mr. (Aitzaz Fareed)
-              </div>
+            <div className="flex items-center justify-between pt-1">
+              <span className="text-[11px] text-slate-500 font-mono">
+                Mr. (Creator Only)
+              </span>
               <button
                 type="submit"
                 className="px-5 py-2 rounded-lg bg-cyan-400 hover:bg-cyan-300 text-black font-semibold text-xs transition-all shadow-md cursor-pointer"
               >
-                Unlock Admin Mode
+                Unlock
               </button>
             </div>
           </form>

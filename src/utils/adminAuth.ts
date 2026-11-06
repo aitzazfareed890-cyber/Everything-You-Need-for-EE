@@ -9,11 +9,7 @@ export const ADMIN_PASSCODE_KEY = 'everything_you_need_for_ee_custom_passcode';
 export const ADMIN_AUTH_EVENT = 'ee_admin_auth_changed';
 
 export const DEFAULT_PASSCODES = [
-  'aitzaz2026',
-  'aitzazfareed890@gmail.com',
-  'ee2026',
-  'admin2026',
-  'admin'
+  '6124'
 ];
 
 export function isAdminAuthenticated(): boolean {

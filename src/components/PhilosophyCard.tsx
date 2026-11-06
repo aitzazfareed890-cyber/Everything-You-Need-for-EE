@@ -1,10 +1,10 @@
 const ARCHIVE_IMAGE_URL =
-  'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80';
+  'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80';
 
 export default function PhilosophyCard() {
   return (
     <section className="max-w-5xl mx-auto px-4 sm:px-6 py-8">
-      <div className="relative rounded-2xl bg-[#080d17]/90 border border-cyan-500/20 backdrop-blur-md overflow-hidden shadow-[0_10px_35px_rgba(0,0,0,0.6)] group">
+      <div className="relative rounded-2xl bg-[#080d17]/95 border border-cyan-500/25 backdrop-blur-md overflow-hidden shadow-[0_10px_35px_rgba(0,0,0,0.7)] group">
         <div className="grid grid-cols-1 md:grid-cols-12 items-center">
           {/* Text Content */}
           <div className="p-6 md:p-8 md:col-span-7 flex flex-col justify-center relative z-10">
@@ -28,14 +28,15 @@ export default function PhilosophyCard() {
             </div>
           </div>
 
-          {/* Contextual Image */}
-          <div className="relative md:col-span-5 h-56 md:h-full min-h-[220px] overflow-hidden">
+          {/* Contextual Image with dark mood grading */}
+          <div className="relative md:col-span-5 h-56 md:h-full min-h-[220px] overflow-hidden bg-[#040811]">
             <img
               src={ARCHIVE_IMAGE_URL}
-              alt="Electrical engineering schematics, oscilloscope, and laboratory desk"
-              className="w-full h-full object-cover filter brightness-[0.75] contrast-105 group-hover:scale-105 transition-transform duration-700"
+              alt="Electrical engineering circuitry and hardware architecture"
+              className="w-full h-full object-cover filter brightness-[0.20] contrast-125 saturate-[0.6] group-hover:scale-105 transition-transform duration-700 opacity-70"
             />
-            <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-[#080d17] via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-[#080d17] via-[#080d17]/85 to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-cyan-950/30 mix-blend-color pointer-events-none" />
           </div>
         </div>
       </div>

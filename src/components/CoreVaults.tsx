@@ -1,11 +1,11 @@
 import { COURSES, USER_DRIVE_LINKS } from '../data/courses';
 
 const LECTURE_NOTES_IMAGE_URL =
-  'https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=1200&q=80';
+  'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=1200&q=80';
 const PAST_PAPERS_IMAGE_URL =
-  'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1200&q=80';
+  'https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=1200&q=80';
 const LAB_MANUALS_IMAGE_URL =
-  'https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?auto=format&fit=crop&w=1200&q=80';
+  'https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=1200&q=80';
 
 interface CoreVaultsProps {
   onOpenCategory: (category: 'Lecture Notes' | 'Past Papers' | 'Lab Manuals') => void;
@@ -40,13 +40,14 @@ export default function CoreVaults({ onOpenCategory, onSelectSemester, onShowToa
       {/* 3 Main Vault Cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
         {/* Card 1: Lecture Notes */}
-        <div className="group card-vault relative rounded-2xl overflow-hidden min-h-[380px] flex flex-col justify-end p-6 border border-white/10 hover:border-cyan-400/60 bg-[#080e18]">
+        <div className="group card-vault relative rounded-2xl overflow-hidden min-h-[380px] flex flex-col justify-end p-6 border border-white/10 hover:border-cyan-400/60 bg-[#060b14] shadow-xl">
           <img
             src={LECTURE_NOTES_IMAGE_URL}
-            alt="Lecture Notes with circuit analysis and engineering textbooks"
-            className="absolute inset-0 w-full h-full object-cover filter brightness-[0.45] contrast-105 group-hover:scale-105 transition-transform duration-700"
+            alt="Engineering lecture schematics and theoretical foundations"
+            className="absolute inset-0 w-full h-full object-cover filter brightness-[0.20] contrast-125 saturate-[0.6] group-hover:scale-105 transition-transform duration-700 opacity-65"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/75 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#040810] via-[#040810]/85 to-[#040810]/50" />
+          <div className="absolute inset-0 bg-cyan-950/20 mix-blend-color pointer-events-none" />
           <div className="relative z-10 flex flex-col items-start">
             <span className="text-[10px] font-mono uppercase tracking-widest px-2 py-0.5 rounded bg-cyan-950/70 text-cyan-300 border border-cyan-500/30 mb-2">
               Theoretical Foundations
@@ -79,13 +80,14 @@ export default function CoreVaults({ onOpenCategory, onSelectSemester, onShowToa
         </div>
 
         {/* Card 2: Past Papers & Solutions */}
-        <div className="group card-vault relative rounded-2xl overflow-hidden min-h-[380px] flex flex-col justify-end p-6 border border-white/10 hover:border-amber-400/60 bg-[#080e18]">
+        <div className="group card-vault relative rounded-2xl overflow-hidden min-h-[380px] flex flex-col justify-end p-6 border border-white/10 hover:border-amber-400/60 bg-[#060b14] shadow-xl">
           <img
             src={PAST_PAPERS_IMAGE_URL}
-            alt="Past papers, step-by-step circuit calculus solutions, and engineering calculator"
-            className="absolute inset-0 w-full h-full object-cover filter brightness-[0.45] contrast-105 group-hover:scale-105 transition-transform duration-700"
+            alt="Solved engineering calculus, derivations and examination marking guides"
+            className="absolute inset-0 w-full h-full object-cover filter brightness-[0.20] contrast-125 saturate-[0.6] group-hover:scale-105 transition-transform duration-700 opacity-65"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/75 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#040810] via-[#040810]/85 to-[#040810]/50" />
+          <div className="absolute inset-0 bg-amber-950/20 mix-blend-color pointer-events-none" />
           <div className="relative z-10 flex flex-col items-start">
             <span className="text-[10px] font-mono uppercase tracking-widest px-2 py-0.5 rounded bg-amber-950/70 text-amber-300 border border-amber-500/30 mb-2">
               Verified Marking Schemes
@@ -118,13 +120,14 @@ export default function CoreVaults({ onOpenCategory, onSelectSemester, onShowToa
         </div>
 
         {/* Card 3: Lab Manuals & Code */}
-        <div className="group card-vault relative rounded-2xl overflow-hidden min-h-[380px] flex flex-col justify-end p-6 border border-white/10 hover:border-sky-400/60 bg-[#080e18]">
+        <div className="group card-vault relative rounded-2xl overflow-hidden min-h-[380px] flex flex-col justify-end p-6 border border-white/10 hover:border-sky-400/60 bg-[#060b14] shadow-xl">
           <img
             src={LAB_MANUALS_IMAGE_URL}
-            alt="Electronics hardware lab bench, oscilloscope waveforms, breadboard, and code terminal"
-            className="absolute inset-0 w-full h-full object-cover filter brightness-[0.45] contrast-105 group-hover:scale-105 transition-transform duration-700"
+            alt="Electronics hardware test bench, oscilloscope waveforms, and embedded simulation"
+            className="absolute inset-0 w-full h-full object-cover filter brightness-[0.20] contrast-125 saturate-[0.6] group-hover:scale-105 transition-transform duration-700 opacity-65"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/75 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#040810] via-[#040810]/85 to-[#040810]/50" />
+          <div className="absolute inset-0 bg-sky-950/20 mix-blend-color pointer-events-none" />
           <div className="relative z-10 flex flex-col items-start">
             <span className="text-[10px] font-mono uppercase tracking-widest px-2 py-0.5 rounded bg-sky-950/70 text-sky-300 border border-sky-500/30 mb-2">
               Simulation &amp; Experiments
