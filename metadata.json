@@ -1,0 +1,6 @@
+{
+  "name": "The Cheat Code | Electrical Engineering Resource Vault",
+  "description": "The academic upper hand for Electrical Engineering. Curated lecture notes, verified past papers, and lab manuals engineered for students with direct Google Drive vaults.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
