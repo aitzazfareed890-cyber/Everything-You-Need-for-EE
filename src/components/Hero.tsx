@@ -45,13 +45,8 @@ export default function Hero({ onSelectSemester, onSelectCategory, onOpenDrivesM
         </h1>
 
         {/* Tagline */}
-        <p className="text-base sm:text-xl font-bold text-white mb-2 tracking-tight drop-shadow-md">
+        <p className="text-base sm:text-xl font-bold text-white mb-4 tracking-tight drop-shadow-md">
           The academic upper hand for Electrical Engineering.
-        </p>
-
-        {/* Subtitle */}
-        <p className="text-xs sm:text-sm md:text-base text-slate-200 max-w-xl mx-auto mb-3 leading-relaxed drop-shadow-sm font-sans">
-          Curated lecture notes, verified past papers, and lab manuals — engineered for UET Taxila students with direct Google Drive access for each subject.
         </p>
 
         {/* Creator badge - "Created by Mr." where clicking Mr. goes to creator Instagram */}

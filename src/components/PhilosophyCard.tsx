@@ -1,5 +1,5 @@
 const ARCHIVE_IMAGE_URL =
-  'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80';
+  'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80';
 
 export default function PhilosophyCard() {
   return (
@@ -33,10 +33,10 @@ export default function PhilosophyCard() {
             <img
               src={ARCHIVE_IMAGE_URL}
               alt="Electrical engineering circuitry and hardware architecture"
-              className="w-full h-full object-cover filter brightness-[0.20] contrast-125 saturate-[0.6] group-hover:scale-105 transition-transform duration-700 opacity-70"
+              referrerPolicy="no-referrer"
+              className="w-full h-full object-cover filter brightness-[0.70] contrast-110 group-hover:scale-105 transition-transform duration-700"
             />
-            <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-[#080d17] via-[#080d17]/85 to-transparent pointer-events-none" />
-            <div className="absolute inset-0 bg-cyan-950/30 mix-blend-color pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-[#080d17] via-[#080d17]/60 to-transparent pointer-events-none" />
           </div>
         </div>
       </div>

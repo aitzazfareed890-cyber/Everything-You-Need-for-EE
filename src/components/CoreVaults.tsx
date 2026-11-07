@@ -1,11 +1,11 @@
 import { COURSES, USER_DRIVE_LINKS } from '../data/courses';
 
 const LECTURE_NOTES_IMAGE_URL =
-  'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=1200&q=80';
+  'https://images.unsplash.com/photo-1555680202-c86f0e12f086?auto=format&fit=crop&w=1200&q=80';
 const PAST_PAPERS_IMAGE_URL =
   'https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=1200&q=80';
 const LAB_MANUALS_IMAGE_URL =
-  'https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=1200&q=80';
+  'https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?auto=format&fit=crop&w=1200&q=80';
 
 interface CoreVaultsProps {
   onOpenCategory: (category: 'Lecture Notes' | 'Past Papers' | 'Lab Manuals') => void;
@@ -43,13 +43,13 @@ export default function CoreVaults({ onOpenCategory, onSelectSemester, onShowToa
         <div className="group card-vault relative rounded-2xl overflow-hidden min-h-[380px] flex flex-col justify-end p-6 border border-white/10 hover:border-cyan-400/60 bg-[#060b14] shadow-xl">
           <img
             src={LECTURE_NOTES_IMAGE_URL}
-            alt="Engineering lecture schematics and theoretical foundations"
-            className="absolute inset-0 w-full h-full object-cover filter brightness-[0.20] contrast-125 saturate-[0.6] group-hover:scale-105 transition-transform duration-700 opacity-65"
+            alt="Engineering circuit board schematics and theoretical foundations"
+            referrerPolicy="no-referrer"
+            className="absolute inset-0 w-full h-full object-cover filter brightness-[0.70] contrast-110 group-hover:scale-105 transition-transform duration-700"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#040810] via-[#040810]/85 to-[#040810]/50" />
-          <div className="absolute inset-0 bg-cyan-950/20 mix-blend-color pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#040810] via-[#040810]/75 to-transparent" />
           <div className="relative z-10 flex flex-col items-start">
-            <span className="text-[10px] font-mono uppercase tracking-widest px-2 py-0.5 rounded bg-cyan-950/70 text-cyan-300 border border-cyan-500/30 mb-2">
+            <span className="text-[10px] font-mono uppercase tracking-widest px-2 py-0.5 rounded bg-cyan-950/80 text-cyan-300 border border-cyan-500/30 mb-2">
               Theoretical Foundations
             </span>
             <h3 className="text-xl font-bold text-white mb-1.5 font-display group-hover:text-cyan-300 transition-colors">
@@ -84,12 +84,12 @@ export default function CoreVaults({ onOpenCategory, onSelectSemester, onShowToa
           <img
             src={PAST_PAPERS_IMAGE_URL}
             alt="Solved engineering calculus, derivations and examination marking guides"
-            className="absolute inset-0 w-full h-full object-cover filter brightness-[0.20] contrast-125 saturate-[0.6] group-hover:scale-105 transition-transform duration-700 opacity-65"
+            referrerPolicy="no-referrer"
+            className="absolute inset-0 w-full h-full object-cover filter brightness-[0.70] contrast-110 group-hover:scale-105 transition-transform duration-700"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#040810] via-[#040810]/85 to-[#040810]/50" />
-          <div className="absolute inset-0 bg-amber-950/20 mix-blend-color pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#040810] via-[#040810]/75 to-transparent" />
           <div className="relative z-10 flex flex-col items-start">
-            <span className="text-[10px] font-mono uppercase tracking-widest px-2 py-0.5 rounded bg-amber-950/70 text-amber-300 border border-amber-500/30 mb-2">
+            <span className="text-[10px] font-mono uppercase tracking-widest px-2 py-0.5 rounded bg-amber-950/80 text-amber-300 border border-amber-500/30 mb-2">
               Verified Marking Schemes
             </span>
             <h3 className="text-xl font-bold text-white mb-1.5 font-display group-hover:text-amber-300 transition-colors">
@@ -123,13 +123,13 @@ export default function CoreVaults({ onOpenCategory, onSelectSemester, onShowToa
         <div className="group card-vault relative rounded-2xl overflow-hidden min-h-[380px] flex flex-col justify-end p-6 border border-white/10 hover:border-sky-400/60 bg-[#060b14] shadow-xl">
           <img
             src={LAB_MANUALS_IMAGE_URL}
-            alt="Electronics hardware test bench, oscilloscope waveforms, and embedded simulation"
-            className="absolute inset-0 w-full h-full object-cover filter brightness-[0.20] contrast-125 saturate-[0.6] group-hover:scale-105 transition-transform duration-700 opacity-65"
+            alt="Electronics hardware lab bench, microchips, and embedded simulation"
+            referrerPolicy="no-referrer"
+            className="absolute inset-0 w-full h-full object-cover filter brightness-[0.70] contrast-110 group-hover:scale-105 transition-transform duration-700"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#040810] via-[#040810]/85 to-[#040810]/50" />
-          <div className="absolute inset-0 bg-sky-950/20 mix-blend-color pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#040810] via-[#040810]/75 to-transparent" />
           <div className="relative z-10 flex flex-col items-start">
-            <span className="text-[10px] font-mono uppercase tracking-widest px-2 py-0.5 rounded bg-sky-950/70 text-sky-300 border border-sky-500/30 mb-2">
+            <span className="text-[10px] font-mono uppercase tracking-widest px-2 py-0.5 rounded bg-sky-950/80 text-sky-300 border border-sky-500/30 mb-2">
               Simulation &amp; Experiments
             </span>
             <h3 className="text-xl font-bold text-white mb-1.5 font-display group-hover:text-sky-300 transition-colors">

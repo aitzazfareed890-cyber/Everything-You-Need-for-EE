@@ -92,20 +92,23 @@ test('Semester 2 contains courses from official Spring 2026 timetable (25-EE)', 
   assert.equal(icp?.creditHours, '2+0');
 });
 
-test('Semester 3 contains courses from official Fall 2026 timetable', () => {
+test('Semester 3 contains courses from official Fall 2026 timetable with drive links', () => {
   const sem3Courses = COURSES.filter((c) => c.semester === 3);
   assert.ok(sem3Courses.length >= 5, 'Must have ENA, EDC, M&I, CVT, IS');
 
   const ena = sem3Courses.find((c) => c.shortName === 'ENA');
   assert.ok(ena);
   assert.equal(ena?.name, 'Electrical Network Analysis');
+  assert.ok(ena?.driveUrl, 'ENA must have driveUrl');
 
   const edc = sem3Courses.find((c) => c.shortName === 'EDC');
   assert.ok(edc);
+  assert.ok(edc?.driveUrl, 'EDC must have driveUrl');
 
   const mi = sem3Courses.find((c) => c.shortName === 'M&I');
   assert.ok(mi);
   assert.equal(mi?.name, 'Microprocessors and Interfacing');
+  assert.ok(mi?.driveUrl, 'M&I must have driveUrl');
 });
 
 test('filterCourses works for course names, short codes, and topics', () => {
