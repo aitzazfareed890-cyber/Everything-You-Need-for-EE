@@ -16,6 +16,9 @@ export interface CourseResource {
 export const CREATOR_INSTAGRAM_URL =
   'https://www.instagram.com/aitzaz_fareed?exln=MWZ4c2IzcWlva3NiYg==';
 
+export const WEBSITE_INSTAGRAM_URL =
+  'https://www.instagram.com/eynforee?cplk=MXgzY2NrY2dmenl1NQ==';
+
 // Direct Google Drive folder links provided by the user
 export const USER_DRIVE_LINKS = {
   AP: 'https://drive.google.com/drive/folders/1sc9JO4juKQIhTmMJVnaFoTVuELJj4cXA?usp=sharing',

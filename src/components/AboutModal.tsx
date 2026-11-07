@@ -1,4 +1,4 @@
-import { CREATOR_INSTAGRAM_URL } from '../data/courses';
+import { CREATOR_INSTAGRAM_URL, WEBSITE_INSTAGRAM_URL } from '../data/courses';
 
 interface AboutModalProps {
   isOpen: boolean;
@@ -63,16 +63,27 @@ export default function AboutModal({ isOpen, onClose }: AboutModalProps) {
                 rel="noopener noreferrer"
                 className="text-cyan-400 underline underline-offset-2 hover:text-white transition-colors"
               >
-                Mr.
+                Mr
               </a>
             </p>
             <p className="text-[11px] text-slate-400">
               Electrical Engineering Department • UET Taxila
             </p>
+            <p className="text-[11px] text-slate-400 font-mono pt-1">
+              For further announcements &amp; academic updates, follow{' '}
+              <a
+                href={WEBSITE_INSTAGRAM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-cyan-300 hover:text-white underline underline-offset-2 font-semibold"
+              >
+                @eynforee
+              </a>
+            </p>
           </div>
           <div className="flex items-center gap-2 pt-2">
             <a
-              href={CREATOR_INSTAGRAM_URL}
+              href={WEBSITE_INSTAGRAM_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="flex-1 py-2 px-3 rounded-lg bg-cyan-400 hover:bg-cyan-300 text-black font-semibold text-center text-xs transition-colors flex items-center justify-center gap-1.5 shadow-md"

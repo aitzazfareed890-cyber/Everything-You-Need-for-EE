@@ -1,5 +1,5 @@
 import ParticleCanvas from './ParticleCanvas';
-import { CREATOR_INSTAGRAM_URL } from '../data/courses';
+import { CREATOR_INSTAGRAM_URL, WEBSITE_INSTAGRAM_URL } from '../data/courses';
 
 interface HeroProps {
   onSelectSemester: (semNumber: number) => void;
@@ -49,7 +49,7 @@ export default function Hero({ onSelectSemester, onSelectCategory, onOpenDrivesM
           The academic upper hand for Electrical Engineering.
         </p>
 
-        {/* Creator badge - "Created by Mr." where clicking Mr. goes to creator Instagram */}
+        {/* Creator badge - "Created by Mr" where clicking Mr goes to creator Instagram */}
         <div className="text-xs sm:text-sm text-slate-300 mb-5">
           Created by{' '}
           <a
@@ -59,13 +59,13 @@ export default function Hero({ onSelectSemester, onSelectCategory, onOpenDrivesM
             className="text-cyan-300 font-semibold underline underline-offset-4 hover:text-white transition-colors decoration-cyan-400"
             title="Visit creator's Instagram profile"
           >
-            Mr.
+            Mr
           </a>
         </div>
 
         {/* Social Action Button: Pill-shaped Instagram */}
         <a
-          href={CREATOR_INSTAGRAM_URL}
+          href={WEBSITE_INSTAGRAM_URL}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-xs sm:text-sm font-semibold text-white backdrop-blur-md transition-all shadow-md hover:scale-105 mb-8 group"

@@ -56,7 +56,7 @@ export default function SemesterModal({
 
   const startEditUrl = (course: CourseResource) => {
     if (!isAdmin) {
-      onShowToast('🔒 Link editing is restricted to Mr. (Admin). Please unlock in Admin Portal.');
+      onShowToast('🔒 Link editing is restricted to Mr (Admin). Please unlock in Admin Portal.');
       return;
     }
     setEditingCourseId(course.id);
@@ -276,7 +276,7 @@ export default function SemesterModal({
             {isAdmin ? (
               <span className="text-emerald-400 font-mono text-[11px] flex items-center gap-1 bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-500/30">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                Admin Active (Mr.)
+                Admin Active (Mr)
               </span>
             ) : (
               <button

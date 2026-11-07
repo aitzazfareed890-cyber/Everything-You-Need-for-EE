@@ -54,7 +54,7 @@ export default function DriveManagerModal({
 
   const startEdit = (id: string, currentUrl: string) => {
     if (!isAdmin) {
-      onShowToast('🔒 Editing links is restricted to Mr. (Admin).');
+      onShowToast('🔒 Editing links is restricted to Mr (Admin).');
       return;
     }
     setEditingId(id);
@@ -300,7 +300,7 @@ export default function DriveManagerModal({
             {isAdmin ? (
               <span className="text-emerald-400 font-mono text-[11px] flex items-center gap-1 bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-500/30">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                Admin Mode Active (Mr.)
+                Admin Mode Active (Mr)
               </span>
             ) : (
               <button

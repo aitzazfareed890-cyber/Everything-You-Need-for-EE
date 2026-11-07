@@ -1,3 +1,5 @@
+import { WEBSITE_INSTAGRAM_URL } from '../data/courses';
+
 interface FooterProps {
   onOpenAbout: () => void;
   onOpenAdminPortal?: () => void;
@@ -6,7 +8,7 @@ interface FooterProps {
 export default function Footer({ onOpenAbout, onOpenAdminPortal }: FooterProps) {
   return (
     <footer className="w-full border-t border-white/5 bg-[#020408]/90 backdrop-blur-md py-12 text-center text-xs text-slate-400 relative z-20">
-      <div className="max-w-xl mx-auto px-4 flex flex-col items-center gap-2">
+      <div className="max-w-xl mx-auto px-4 flex flex-col items-center gap-2.5">
         <div className="flex items-center gap-4 flex-wrap justify-center mb-1">
           <button
             type="button"
@@ -30,8 +32,21 @@ export default function Footer({ onOpenAbout, onOpenAdminPortal }: FooterProps) 
           Built for UET Taxila Electrical Engineering students.
         </p>
         <p className="text-slate-500 font-mono text-[11px]">
-          © 2024–2026 EVERYTHING YOU NEED FOR EE • UET Taxila. All rights reserved.
+          © 2024–2026 Aitzaz Fareed • UET Taxila. All rights reserved.
         </p>
+        <div className="pt-2 border-t border-white/5 text-[11px] text-slate-400 font-mono flex items-center justify-center gap-1.5 flex-wrap">
+          <span>For further announcements &amp; academic updates, follow</span>
+          <a
+            href={WEBSITE_INSTAGRAM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-cyan-300 hover:text-white underline underline-offset-2 font-semibold transition-colors flex items-center gap-0.5"
+            title="Follow @eynforee on Instagram"
+          >
+            <span>@eynforee</span>
+            <span className="material-symbols-outlined text-[13px]">arrow_outward</span>
+          </a>
+        </div>
       </div>
     </footer>
   );

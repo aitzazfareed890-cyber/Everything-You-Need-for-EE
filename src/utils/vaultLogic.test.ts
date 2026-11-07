@@ -1,9 +1,10 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { COURSES, SEMESTERS, filterCourses, USER_DRIVE_LINKS, CREATOR_INSTAGRAM_URL } from '../data/courses.ts';
+import { COURSES, SEMESTERS, filterCourses, USER_DRIVE_LINKS, CREATOR_INSTAGRAM_URL, WEBSITE_INSTAGRAM_URL } from '../data/courses.ts';
 
-test('CREATOR_INSTAGRAM_URL matches user requested link', () => {
+test('CREATOR_INSTAGRAM_URL and WEBSITE_INSTAGRAM_URL match requested links', () => {
   assert.equal(CREATOR_INSTAGRAM_URL, 'https://www.instagram.com/aitzaz_fareed?exln=MWZ4c2IzcWlva3NiYg==');
+  assert.equal(WEBSITE_INSTAGRAM_URL, 'https://www.instagram.com/eynforee?cplk=MXgzY2NrY2dmenl1NQ==');
 });
 
 test('SEMESTERS has 8 semesters defined', () => {
@@ -92,23 +93,24 @@ test('Semester 2 contains courses from official Spring 2026 timetable (25-EE)', 
   assert.equal(icp?.creditHours, '2+0');
 });
 
-test('Semester 3 contains courses from official Fall 2026 timetable with drive links', () => {
+test('Semester 3 contains official courses (ENA, EDC, M&I, CVT, IS) ready for admin drive assignment', () => {
   const sem3Courses = COURSES.filter((c) => c.semester === 3);
   assert.ok(sem3Courses.length >= 5, 'Must have ENA, EDC, M&I, CVT, IS');
 
   const ena = sem3Courses.find((c) => c.shortName === 'ENA');
   assert.ok(ena);
   assert.equal(ena?.name, 'Electrical Network Analysis');
-  assert.ok(ena?.driveUrl, 'ENA must have driveUrl');
+  assert.equal(ena?.code, 'EE-211');
 
   const edc = sem3Courses.find((c) => c.shortName === 'EDC');
   assert.ok(edc);
-  assert.ok(edc?.driveUrl, 'EDC must have driveUrl');
+  assert.equal(edc?.name, 'Electronic Devices and Circuits');
+  assert.equal(edc?.code, 'EE-212');
 
   const mi = sem3Courses.find((c) => c.shortName === 'M&I');
   assert.ok(mi);
   assert.equal(mi?.name, 'Microprocessors and Interfacing');
-  assert.ok(mi?.driveUrl, 'M&I must have driveUrl');
+  assert.equal(mi?.code, 'EE-213');
 });
 
 test('filterCourses works for course names, short codes, and topics', () => {

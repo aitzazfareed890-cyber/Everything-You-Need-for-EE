@@ -1,4 +1,4 @@
-import { CREATOR_INSTAGRAM_URL } from '../data/courses';
+import { WEBSITE_INSTAGRAM_URL } from '../data/courses';
 
 export default function HotlineBanner() {
   return (
@@ -12,7 +12,7 @@ export default function HotlineBanner() {
             For suggestions to improve the website or request specific semester content, past papers, or solutions.
           </h4>
           <a
-            href={CREATOR_INSTAGRAM_URL}
+            href={WEBSITE_INSTAGRAM_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-xs sm:text-sm font-semibold text-white backdrop-blur-md transition-all shadow-lg hover:scale-105 group"
@@ -25,6 +25,17 @@ export default function HotlineBanner() {
             </svg>
             <span>DM on Instagram</span>
           </a>
+          <p className="text-[11px] text-slate-400 font-mono mt-4">
+            For further announcements &amp; academic updates, visit{' '}
+            <a
+              href={WEBSITE_INSTAGRAM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-cyan-400 hover:text-cyan-300 underline underline-offset-2 font-semibold"
+            >
+              @eynforee
+            </a>
+          </p>
         </div>
       </div>
     </section>

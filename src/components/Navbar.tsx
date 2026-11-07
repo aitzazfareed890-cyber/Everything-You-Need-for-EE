@@ -50,7 +50,7 @@ export default function Navbar({
               type="button"
               onClick={onOpenAdminPortal}
               className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-emerald-950/70 hover:bg-emerald-900 border border-emerald-500/40 text-emerald-300 text-xs font-mono transition-all cursor-pointer shadow-sm animate-pulse"
-              title="Admin Mode Active (Mr.) - Click to open Admin Portal"
+              title="Admin Mode Active (Mr) - Click to open Admin Portal"
             >
               <span className="material-symbols-outlined text-[14px]">shield</span>
               <span className="hidden sm:inline">Admin Mode</span>

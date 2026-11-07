@@ -1,6 +1,6 @@
 /**
  * Authentication and authorization utilities for Admin / Creator Mode.
- * Ensures only Mr. (Aitzaz Fareed) can modify or add Google Drive links,
+ * Ensures only Mr (Aitzaz Fareed) can modify or add Google Drive links,
  * while regular mobile/desktop visitors have a secure, read-only experience.
  */
 

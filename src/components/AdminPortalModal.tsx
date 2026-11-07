@@ -47,7 +47,7 @@ export default function AdminPortalModal({
     setErrorMsg('');
     const success = loginAdmin(passcodeInput);
     if (success) {
-      onShowToast('⚡ Welcome, Mr.! Admin Mode is now active.');
+      onShowToast('⚡ Welcome, Mr! Admin Mode is now active.');
       setPasscodeInput('');
       setRefreshTick((t) => t + 1);
       onAdminStateChange?.();
@@ -182,7 +182,7 @@ export default function AdminPortalModal({
 
             <div className="flex items-center justify-between pt-1">
               <span className="text-[11px] text-slate-500 font-mono">
-                Mr. (Creator Only)
+                Mr (Creator Only)
               </span>
               <button
                 type="submit"
@@ -200,7 +200,7 @@ export default function AdminPortalModal({
               <div>
                 <p className="text-xs font-semibold text-emerald-300 flex items-center gap-1.5">
                   <span className="material-symbols-outlined text-[16px]">verified_user</span>
-                  Admin Mode Active — Mr. (Aitzaz Fareed)
+                  Admin Mode Active — Mr (Aitzaz Fareed)
                 </p>
                 <p className="text-[11px] text-slate-400 mt-0.5">
                   Only you have permission to edit or insert subject Google Drive links. Public visitors see clean read-only vaults.
@@ -411,7 +411,7 @@ export default function AdminPortalModal({
           <span className="text-slate-500 font-mono text-[11px]">
             {isAuth
               ? '⚡ Changes saved to device cache and persistent overrides'
-              : 'Strictly for Mr. (Aitzaz Fareed)'}
+              : 'Strictly for Mr (Aitzaz Fareed)'}
           </span>
           <button
             type="button"
