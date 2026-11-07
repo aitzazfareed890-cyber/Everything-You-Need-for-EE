@@ -177,6 +177,7 @@ export default function MenuDrawer({
                 type="button"
                 onClick={() => {
                   onClose();
+                  window.dispatchEvent(new Event('open-feedback-options'));
                   document.getElementById('feedback')?.scrollIntoView({ behavior: 'smooth' });
                 }}
                 className="text-white hover:text-cyan-400 font-semibold block transition-colors text-left cursor-pointer"

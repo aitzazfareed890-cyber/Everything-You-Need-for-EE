@@ -1,6 +1,17 @@
+import { useEffect, useState } from 'react';
 import { CONTACT_EMAIL, WHATSAPP_CHAT_URL } from '../data/courses';
 
+export const OPEN_FEEDBACK_EVENT = 'open-feedback-options';
+
 export default function FeedbackQueries() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    const openOptions = () => setIsOpen(true);
+    window.addEventListener(OPEN_FEEDBACK_EVENT, openOptions);
+    return () => window.removeEventListener(OPEN_FEEDBACK_EVENT, openOptions);
+  }, []);
+
   return (
     <section id="feedback" className="max-w-4xl mx-auto px-4 sm:px-6 pb-20 scroll-mt-24">
       <div className="relative rounded-2xl overflow-hidden p-8 sm:p-10 border border-white/10 bg-[#060c17]/90 shadow-2xl backdrop-blur-md">
@@ -15,33 +26,43 @@ export default function FeedbackQueries() {
             Send feedback, report a missing resource, or ask about semester notes, past papers, and lab files.
           </p>
 
-          <div className="w-full max-w-lg grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <a
-              href={`mailto:${CONTACT_EMAIL}`}
-              className="flex flex-col items-start gap-2 p-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-cyan-500/40 text-left transition-all group"
+          {!isOpen ? (
+            <button
+              type="button"
+              onClick={() => setIsOpen(true)}
+              className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-sm font-semibold text-white backdrop-blur-md transition-all shadow-lg hover:scale-105 cursor-pointer"
             >
-              <span className="material-symbols-outlined text-cyan-400 text-[22px]">mail</span>
-              <span className="text-[10px] font-mono uppercase tracking-wider text-slate-400">Email</span>
-              <span className="text-sm font-semibold text-white group-hover:text-cyan-300 break-all">
-                {CONTACT_EMAIL}
-              </span>
-            </a>
+              <span className="material-symbols-outlined text-cyan-400 text-[18px]">forum</span>
+              <span>Feedback</span>
+            </button>
+          ) : (
+            <div className="w-full max-w-lg grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <a
+                href={`mailto:${CONTACT_EMAIL}`}
+                className="flex flex-col items-center justify-center gap-1 px-4 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-cyan-500/40 transition-all group"
+              >
+                <span className="inline-flex items-center gap-2">
+                  <span className="material-symbols-outlined text-cyan-400 text-[22px]">mail</span>
+                  <span className="text-sm font-semibold text-white group-hover:text-cyan-300">Email</span>
+                </span>
+                <span className="text-[11px] text-slate-400 break-all">{CONTACT_EMAIL}</span>
+              </a>
 
-            <a
-              href={WHATSAPP_CHAT_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex flex-col items-start gap-2 p-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-emerald-500/40 text-left transition-all group"
-              title="Chat on WhatsApp"
-            >
-              <span className="material-symbols-outlined text-emerald-400 text-[22px]">chat</span>
-              <span className="text-[10px] font-mono uppercase tracking-wider text-slate-400">WhatsApp</span>
-              <span className="text-sm font-semibold text-white group-hover:text-emerald-300 inline-flex items-center gap-1">
-                +92 342 9397675
-                <span className="material-symbols-outlined text-[14px]">arrow_outward</span>
-              </span>
-            </a>
-          </div>
+              <a
+                href={WHATSAPP_CHAT_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 px-4 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-emerald-500/40 transition-all group"
+                title="Open WhatsApp chat"
+              >
+                <span className="material-symbols-outlined text-emerald-400 text-[22px]">chat</span>
+                <span className="text-sm font-semibold text-white group-hover:text-emerald-300 inline-flex items-center gap-1">
+                  WhatsApp
+                  <span className="material-symbols-outlined text-[14px]">arrow_outward</span>
+                </span>
+              </a>
+            </div>
+          )}
         </div>
       </div>
     </section>
