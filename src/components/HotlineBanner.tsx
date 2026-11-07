@@ -2,7 +2,7 @@ import { WEBSITE_INSTAGRAM_URL, WHATSAPP_CHANNEL_URL } from '../data/courses';
 
 export default function HotlineBanner() {
   return (
-    <section className="max-w-4xl mx-auto px-4 sm:px-6 pb-20">
+    <section className="max-w-4xl mx-auto px-4 sm:px-6 pb-8">
       <div className="relative rounded-2xl overflow-hidden p-8 sm:p-10 border border-white/10 text-center flex flex-col items-center justify-center bg-[#060c17]/90 shadow-2xl backdrop-blur-md">
         <div className="relative z-10 max-w-lg">
           <span className="text-[10px] font-mono tracking-widest uppercase text-cyan-400 mb-2 block">

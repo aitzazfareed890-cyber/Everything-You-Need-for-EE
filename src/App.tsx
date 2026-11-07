@@ -5,6 +5,7 @@ import Hero from './components/Hero';
 import PhilosophyCard from './components/PhilosophyCard';
 import CoreVaults from './components/CoreVaults';
 import HotlineBanner from './components/HotlineBanner';
+import FeedbackQueries from './components/FeedbackQueries';
 import Footer from './components/Footer';
 import QuoteWidget from './components/QuoteWidget';
 import SemesterModal from './components/SemesterModal';
@@ -102,6 +103,8 @@ export default function App() {
         />
 
         <HotlineBanner />
+
+        <FeedbackQueries />
       </main>
 
       {/* Footer */}

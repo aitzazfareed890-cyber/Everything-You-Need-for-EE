@@ -176,6 +176,16 @@ export default function MenuDrawer({
               <button
                 type="button"
                 onClick={() => {
+                  onClose();
+                  document.getElementById('feedback')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="text-white hover:text-cyan-400 font-semibold block transition-colors text-left cursor-pointer"
+              >
+                Feedback &amp; Queries
+              </button>
+              <button
+                type="button"
+                onClick={() => {
                   onOpenAdminPortal?.();
                   onClose();
                 }}

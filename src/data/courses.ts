@@ -22,6 +22,10 @@ export const WEBSITE_INSTAGRAM_URL =
 export const WHATSAPP_CHANNEL_URL =
   'https://whatsapp.com/channel/0029Vb9VgAi7j6fyDbQpHp0e';
 
+export const CONTACT_EMAIL = 'aitzazfareed890@gmail.com';
+
+export const WHATSAPP_CHAT_URL = 'https://wa.me/923429397675';
+
 // Direct Google Drive folder links provided by the user
 export const USER_DRIVE_LINKS = {
   AP: 'https://drive.google.com/drive/folders/1sc9JO4juKQIhTmMJVnaFoTVuELJj4cXA?usp=sharing',
