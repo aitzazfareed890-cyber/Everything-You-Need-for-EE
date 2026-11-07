@@ -32,7 +32,7 @@ export default function Footer({ onOpenAbout, onOpenAdminPortal }: FooterProps) 
           Built for UET Taxila Electrical Engineering students.
         </p>
         <p className="text-slate-500 font-mono text-[11px]">
-          © Aitzaz Fareed. All rights reserved.
+          © Aitzaz Fareed &amp; Ali Hassan. All rights reserved.
         </p>
         <div className="pt-2 border-t border-white/5 text-[11px] text-slate-400 font-mono flex items-center justify-center gap-1.5 flex-wrap">
           <span>For further announcements &amp; academic updates, join our</span>
