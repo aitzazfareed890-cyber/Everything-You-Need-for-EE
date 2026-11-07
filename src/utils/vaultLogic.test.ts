@@ -30,9 +30,6 @@ test('Semester 1 contains all courses from official Fall 2026 timetable with dir
   assert.ok(bme, 'Basic Mechanical Engineering must exist');
   assert.equal(bme?.driveUrl, USER_DRIVE_LINKS.BME);
 
-  const cp = sem1Courses.find((c) => c.shortName === 'CP');
-  assert.ok(cp, 'Computer Programming must exist');
-  assert.equal(cp?.driveUrl, USER_DRIVE_LINKS.CP);
 
   const wpl = sem1Courses.find((c) => c.shortName === 'WP-L');
   assert.ok(wpl, 'Workshop Practice Lab must exist');
@@ -86,6 +83,7 @@ test('Semester 2 contains courses from official Spring 2026 timetable (25-EE)', 
   assert.equal(cp?.name, 'Computer Programming');
   assert.equal(cp?.code, 'CS-124');
   assert.equal(cp?.creditHours, '3+1');
+  assert.equal(cp?.driveUrl, USER_DRIVE_LINKS.CP);
 
   const de = sem2Courses.find((c) => c.shortName === 'DE');
   assert.ok(de, 'Differential Equations (DE) must exist');

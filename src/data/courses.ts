@@ -88,20 +88,7 @@ export const COURSES: CourseResource[] = [
     description: 'Information and communication technology, computer systems, operating systems, networking fundamentals, software tools, and simulation.',
     topics: ['Computer Architecture', 'Operating Systems', 'Networking Basics', 'Simulation Tools', 'Digital Tools']
   },
-  {
-    id: 'cp_sem1',
-    name: 'Computer Programming',
-    shortName: 'CP',
-    code: 'CS-104',
-    semester: 1,
-    creditHours: '2+1',
-    driveUrl: USER_DRIVE_LINKS.CP,
-    notesCount: 'Full Notes',
-    papersCount: 'Past Papers',
-    labsCount: 'Code Tasks',
-    description: 'Programming fundamentals in C++, control structures, functions, arrays, pointers, memory allocation, and problem-solving.',
-    topics: ['C++ Syntax', 'Pointers & Memory', 'Loops & Decisions', 'Arrays & Strings', 'Functions & Recursion']
-  },
+
   {
     id: 'bme',
     name: 'Basic Mechanical Engineering',
@@ -220,6 +207,7 @@ export const COURSES: CourseResource[] = [
     code: 'CS-124',
     semester: 2,
     creditHours: '3+1',
+    driveUrl: USER_DRIVE_LINKS.CP,
     notesCount: 'Full Notes',
     papersCount: 'Past Papers',
     labsCount: 'Computer Simulation (CP-L)',
