@@ -29,6 +29,12 @@ export const USER_DRIVE_LINKS = {
   OHS: 'https://drive.google.com/drive/folders/1j947PMAbY13UG_B2zovzc8_HQ6OWozmt?usp=sharing',
   ICT: 'https://drive.google.com/drive/folders/1TBKJfRcDUpg71GCGI4fH3WWhtxwvPjIi?usp=sharing',
   CALCULUS: 'https://drive.google.com/drive/folders/14e1ZoVxjykQsVzaxzAqeVpMlrPgGuPJP?usp=sharing',
+  FE: 'https://drive.google.com/drive/folders/1yWwvJ5BHI8cv6rqd90QVzToG2-ByzF_T?usp=sharing',
+  CVT: 'https://drive.google.com/drive/folders/1DIERw0iRdv8zVqZj18xGXLn6QqXvIB-L?usp=sharing',
+  EDC: 'https://drive.google.com/drive/folders/19cFHAPRYt6rvJfWOJ8_aFfNDuk1QnLIO?usp=sharing',
+  ENA: 'https://drive.google.com/drive/folders/1ShQx9nnimgqj-xLjynEbssUaK1-uzQ82?usp=sharing',
+  IS: 'https://drive.google.com/drive/folders/1Wb-b-Hd9ha_UHDq8OSyIYD7yRwCZf1q6?usp=sharing',
+  MNI: 'https://drive.google.com/drive/folders/168oTkk0RJEA_M-K3anedugIyf1mGBZRl?usp=sharing',
 };
 
 export const COURSES: CourseResource[] = [
@@ -152,6 +158,7 @@ export const COURSES: CourseResource[] = [
     code: 'HS-109',
     semester: 1,
     creditHours: '3+0',
+    driveUrl: USER_DRIVE_LINKS.FE,
     notesCount: 'Full Notes',
     papersCount: 'Past Papers',
     labsCount: 'Theory',
@@ -247,6 +254,7 @@ export const COURSES: CourseResource[] = [
     code: 'EE-211',
     semester: 3,
     creditHours: '3+1',
+    driveUrl: USER_DRIVE_LINKS.ENA,
     notesCount: 'Full Notes',
     papersCount: 'Past Papers',
     labsCount: 'Basic Electrical Eng (ENA-L)',
@@ -260,6 +268,7 @@ export const COURSES: CourseResource[] = [
     code: 'EE-212',
     semester: 3,
     creditHours: '3+1',
+    driveUrl: USER_DRIVE_LINKS.EDC,
     notesCount: 'Full Notes',
     papersCount: 'Past Papers',
     labsCount: 'Electronics Lab (EDC-L)',
@@ -273,6 +282,7 @@ export const COURSES: CourseResource[] = [
     code: 'EE-213',
     semester: 3,
     creditHours: '3+1',
+    driveUrl: USER_DRIVE_LINKS.MNI,
     notesCount: 'Full Notes',
     papersCount: 'Past Papers',
     labsCount: 'Digital Systems Lab (M&I-L)',
@@ -286,6 +296,7 @@ export const COURSES: CourseResource[] = [
     code: 'GS-214',
     semester: 3,
     creditHours: '3+0',
+    driveUrl: USER_DRIVE_LINKS.CVT,
     notesCount: 'Full Notes',
     papersCount: 'Past Papers',
     labsCount: 'Theory',
@@ -299,6 +310,7 @@ export const COURSES: CourseResource[] = [
     code: 'IS-215',
     semester: 3,
     creditHours: '2+0',
+    driveUrl: USER_DRIVE_LINKS.IS,
     notesCount: 'Full Notes',
     papersCount: 'Past Papers',
     labsCount: 'Theory',
@@ -806,6 +818,7 @@ export const SEMESTERS: SemesterInfo[] = [
     tag: 'FALL 2026 • 25-EE SESSION',
     yearTerm: 'Year 2 / Fall',
     description: 'Official UET Taxila Fall 2026 Timetable: Electrical Network Analysis (ENA), Electronic Devices & Circuits (EDC), Microprocessors & Interfacing (M&I), Complex Variables (CVT), Islamic Studies.',
+    driveUrl: USER_DRIVE_LINKS.ENA,
     isUnlocked: true
   },
   {

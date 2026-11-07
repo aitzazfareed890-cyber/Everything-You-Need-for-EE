@@ -50,6 +50,10 @@ test('Semester 1 contains all courses from official Fall 2026 timetable with dir
   const calculus = sem1Courses.find((c) => c.shortName === 'C & AG');
   assert.ok(calculus, 'Calculus & Analytical Geometry must exist');
   assert.equal(calculus?.driveUrl, USER_DRIVE_LINKS.CALCULUS);
+
+  const fe = sem1Courses.find((c) => c.shortName === 'FE');
+  assert.ok(fe, 'Functional English must exist');
+  assert.equal(fe?.driveUrl, USER_DRIVE_LINKS.FE);
 });
 
 test('Semester 2 contains courses from official Spring 2026 timetable (25-EE)', () => {
@@ -93,24 +97,37 @@ test('Semester 2 contains courses from official Spring 2026 timetable (25-EE)', 
   assert.equal(icp?.creditHours, '2+0');
 });
 
-test('Semester 3 contains official courses (ENA, EDC, M&I, CVT, IS) ready for admin drive assignment', () => {
+test('Semester 3 contains official courses with direct Google Drive links provided by user', () => {
   const sem3Courses = COURSES.filter((c) => c.semester === 3);
-  assert.ok(sem3Courses.length >= 5, 'Must have ENA, EDC, M&I, CVT, IS');
+  assert.equal(sem3Courses.length, 5, 'Must have exactly ENA, EDC, M&I, CVT, IS');
 
   const ena = sem3Courses.find((c) => c.shortName === 'ENA');
   assert.ok(ena);
   assert.equal(ena?.name, 'Electrical Network Analysis');
   assert.equal(ena?.code, 'EE-211');
+  assert.equal(ena?.driveUrl, USER_DRIVE_LINKS.ENA);
 
   const edc = sem3Courses.find((c) => c.shortName === 'EDC');
   assert.ok(edc);
   assert.equal(edc?.name, 'Electronic Devices and Circuits');
   assert.equal(edc?.code, 'EE-212');
+  assert.equal(edc?.driveUrl, USER_DRIVE_LINKS.EDC);
 
   const mi = sem3Courses.find((c) => c.shortName === 'M&I');
   assert.ok(mi);
   assert.equal(mi?.name, 'Microprocessors and Interfacing');
   assert.equal(mi?.code, 'EE-213');
+  assert.equal(mi?.driveUrl, USER_DRIVE_LINKS.MNI);
+
+  const cvt = sem3Courses.find((c) => c.shortName === 'CVT');
+  assert.ok(cvt);
+  assert.equal(cvt?.name, 'Complex Variables & Transforms');
+  assert.equal(cvt?.driveUrl, USER_DRIVE_LINKS.CVT);
+
+  const is = sem3Courses.find((c) => c.shortName === 'IS');
+  assert.ok(is);
+  assert.equal(is?.name, 'Islamic Studies');
+  assert.equal(is?.driveUrl, USER_DRIVE_LINKS.IS);
 });
 
 test('Semester 4 contains official courses from Spring 2026 timetable (24-EE)', () => {
