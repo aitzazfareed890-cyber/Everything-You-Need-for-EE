@@ -113,6 +113,66 @@ test('Semester 3 contains official courses (ENA, EDC, M&I, CVT, IS) ready for ad
   assert.equal(mi?.code, 'EE-213');
 });
 
+test('Semester 4 contains official courses from Spring 2026 timetable (24-EE)', () => {
+  const sem4 = COURSES.filter((c) => c.semester === 4);
+  assert.equal(sem4.length, 6);
+  assert.ok(sem4.find((c) => c.shortName === 'EM' && c.name === 'Electrical Machines'));
+  assert.ok(sem4.find((c) => c.shortName === 'M&I' && c.name === 'Microprocessors and Interfacing'));
+  assert.ok(sem4.find((c) => c.shortName === 'S&S' && c.name === 'Signals and Systems'));
+  assert.ok(sem4.find((c) => c.shortName === 'PME' && c.name === 'Probability Methods in Engineering'));
+  assert.ok(sem4.find((c) => c.shortName === 'LA' && c.name === 'Linear Algebra'));
+  assert.ok(sem4.find((c) => c.shortName === 'QT-II'));
+});
+
+test('Semester 5 contains official courses from Fall 2026 timetable (24-EE)', () => {
+  const sem5 = COURSES.filter((c) => c.semester === 5);
+  assert.equal(sem5.length, 5);
+  assert.ok(sem5.find((c) => c.shortName === 'CS' && c.name === 'Communication Systems'));
+  assert.ok(sem5.find((c) => c.shortName === 'EFT' && c.name === 'Electromagnetic Field Theory'));
+  assert.ok(sem5.find((c) => c.shortName === 'LCS' && c.name === 'Linear Control Systems'));
+  assert.ok(sem5.find((c) => c.shortName === 'ML' && c.name === 'Machine Learning'));
+  assert.ok(sem5.find((c) => c.shortName === 'PS' && c.name === 'Pakistan Studies'));
+});
+
+test('Semester 6 contains official courses from Spring 2026 timetable (23-EE)', () => {
+  const sem6 = COURSES.filter((c) => c.semester === 6);
+  assert.equal(sem6.length, 8);
+  assert.ok(sem6.find((c) => c.shortName === 'EEM' && c.name === 'Engineering Economics & Management'));
+  assert.ok(sem6.find((c) => c.shortName === 'PE' && c.name === 'Professional Ethics'));
+  assert.ok(sem6.find((c) => c.shortName === 'TRW' && c.name === 'Technical Report Writing'));
+  assert.ok(sem6.find((c) => c.shortName === 'PSA' && c.name === 'Power System Analysis'));
+  assert.ok(sem6.find((c) => c.shortName === 'PDU' && c.name === 'Power Distribution & Utilization'));
+  assert.ok(sem6.find((c) => c.shortName === 'ECD' && c.name === 'Electronic Circuit Design'));
+  assert.ok(sem6.find((c) => c.shortName === 'CCN' && c.name === 'Computer Communication Networks'));
+  assert.ok(sem6.find((c) => c.shortName === 'QT-III'));
+});
+
+test('Semester 7 contains official courses from Fall 2026 timetable (23-EE)', () => {
+  const sem7 = COURSES.filter((c) => c.semester === 7);
+  assert.equal(sem7.length, 8);
+  assert.ok(sem7.find((c) => c.shortName === 'EP' && c.name === 'Entrepreneurship'));
+  assert.ok(sem7.find((c) => c.shortName === 'CT' && c.name === 'Critical Thinking'));
+  assert.ok(sem7.find((c) => c.shortName === 'PG' && c.name === 'Power Generation'));
+  assert.ok(sem7.find((c) => c.shortName === 'EPT' && c.name === 'Electrical Power Transmission'));
+  assert.ok(sem7.find((c) => c.shortName === 'I&M' && c.name === 'Instrumentation & Measurements'));
+  assert.ok(sem7.find((c) => c.shortName === 'DSP' && c.name === 'Digital Signal Processing'));
+  assert.ok(sem7.find((c) => c.shortName === 'DIP' && c.name === 'Digital Image Processing'));
+  assert.ok(sem7.find((c) => c.shortName === 'FYDP-I' && c.name === 'Final Year Design Project-I'));
+});
+
+test('Semester 8 contains official courses from Spring 2026 timetable (22-EE)', () => {
+  const sem8 = COURSES.filter((c) => c.semester === 8);
+  assert.equal(sem8.length, 8);
+  assert.ok(sem8.find((c) => c.shortName === 'PSP' && c.name === 'Power System Protection'));
+  assert.ok(sem8.find((c) => c.shortName === 'HVE' && c.name === 'High Voltage Engineering'));
+  assert.ok(sem8.find((c) => c.shortName === 'IA' && c.name === 'Industrial Automation'));
+  assert.ok(sem8.find((c) => c.shortName === 'PE' && c.name === 'Power Electronics'));
+  assert.ok(sem8.find((c) => c.shortName === 'DC' && c.name === 'Digital Communication'));
+  assert.ok(sem8.find((c) => c.shortName === 'OC' && c.name === 'Optical Communication'));
+  assert.ok(sem8.find((c) => c.shortName === 'FYDP-II' && c.name === 'Final Year Design Project-II'));
+  assert.ok(sem8.find((c) => c.shortName === 'QT-IV'));
+});
+
 test('filterCourses works for course names, short codes, and topics', () => {
   const apResults = filterCourses('Applied Physics');
   assert.ok(apResults.length >= 1);
@@ -123,4 +183,8 @@ test('filterCourses works for course names, short codes, and topics', () => {
   const topicResults = filterCourses('Kirchhoff');
   assert.ok(topicResults.length >= 1);
   assert.equal(topicResults[0].shortName, 'LCA');
+
+  const mlResults = filterCourses('Machine Learning');
+  assert.ok(mlResults.length >= 1);
+  assert.equal(mlResults[0].shortName, 'ML');
 });
