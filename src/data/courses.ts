@@ -19,6 +19,9 @@ export const CREATOR_INSTAGRAM_URL =
 export const WEBSITE_INSTAGRAM_URL =
   'https://www.instagram.com/eynforee?cplk=MXgzY2NrY2dmenl1NQ==';
 
+export const WHATSAPP_CHANNEL_URL =
+  'https://whatsapp.com/channel/0029Vb9VgAi7j6fyDbQpHp0e';
+
 // Direct Google Drive folder links provided by the user
 export const USER_DRIVE_LINKS = {
   AP: 'https://drive.google.com/drive/folders/1sc9JO4juKQIhTmMJVnaFoTVuELJj4cXA?usp=sharing',

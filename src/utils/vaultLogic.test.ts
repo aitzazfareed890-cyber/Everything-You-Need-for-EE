@@ -1,10 +1,11 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { COURSES, SEMESTERS, filterCourses, USER_DRIVE_LINKS, CREATOR_INSTAGRAM_URL, WEBSITE_INSTAGRAM_URL } from '../data/courses.ts';
+import { COURSES, SEMESTERS, filterCourses, USER_DRIVE_LINKS, CREATOR_INSTAGRAM_URL, WEBSITE_INSTAGRAM_URL, WHATSAPP_CHANNEL_URL } from '../data/courses.ts';
 
-test('CREATOR_INSTAGRAM_URL and WEBSITE_INSTAGRAM_URL match requested links', () => {
+test('CREATOR_INSTAGRAM_URL, WEBSITE_INSTAGRAM_URL and WHATSAPP_CHANNEL_URL match requested links', () => {
   assert.equal(CREATOR_INSTAGRAM_URL, 'https://www.instagram.com/aitzaz_fareed?exln=MWZ4c2IzcWlva3NiYg==');
   assert.equal(WEBSITE_INSTAGRAM_URL, 'https://www.instagram.com/eynforee?cplk=MXgzY2NrY2dmenl1NQ==');
+  assert.equal(WHATSAPP_CHANNEL_URL, 'https://whatsapp.com/channel/0029Vb9VgAi7j6fyDbQpHp0e');
 });
 
 test('SEMESTERS has 8 semesters defined', () => {

@@ -1,4 +1,4 @@
-import { CREATOR_INSTAGRAM_URL, WEBSITE_INSTAGRAM_URL } from '../data/courses';
+import { CREATOR_INSTAGRAM_URL, WEBSITE_INSTAGRAM_URL, WHATSAPP_CHANNEL_URL } from '../data/courses';
 
 interface AboutModalProps {
   isOpen: boolean;
@@ -70,14 +70,16 @@ export default function AboutModal({ isOpen, onClose }: AboutModalProps) {
               Electrical Engineering Department • UET Taxila
             </p>
             <p className="text-[11px] text-slate-400 font-mono pt-1">
-              For further announcements &amp; academic updates, follow{' '}
+              For further announcements &amp; academic updates, join our{' '}
               <a
-                href={WEBSITE_INSTAGRAM_URL}
+                href={WHATSAPP_CHANNEL_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-cyan-300 hover:text-white underline underline-offset-2 font-semibold"
+                className="text-emerald-400 hover:text-emerald-300 underline underline-offset-2 font-semibold inline-flex items-center gap-0.5"
+                title="Join official WhatsApp Channel"
               >
-                @eynforee
+                <span>WhatsApp Channel</span>
+                <span className="material-symbols-outlined text-[13px]">arrow_outward</span>
               </a>
             </p>
           </div>

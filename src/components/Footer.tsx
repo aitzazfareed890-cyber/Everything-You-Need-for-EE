@@ -1,4 +1,4 @@
-import { WEBSITE_INSTAGRAM_URL } from '../data/courses';
+import { WHATSAPP_CHANNEL_URL } from '../data/courses';
 
 interface FooterProps {
   onOpenAbout: () => void;
@@ -32,18 +32,18 @@ export default function Footer({ onOpenAbout, onOpenAdminPortal }: FooterProps) 
           Built for UET Taxila Electrical Engineering students.
         </p>
         <p className="text-slate-500 font-mono text-[11px]">
-          © 2024–2026 Aitzaz Fareed • UET Taxila. All rights reserved.
+          © Aitzaz Fareed. All rights reserved.
         </p>
         <div className="pt-2 border-t border-white/5 text-[11px] text-slate-400 font-mono flex items-center justify-center gap-1.5 flex-wrap">
-          <span>For further announcements &amp; academic updates, follow</span>
+          <span>For further announcements &amp; academic updates, join our</span>
           <a
-            href={WEBSITE_INSTAGRAM_URL}
+            href={WHATSAPP_CHANNEL_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-cyan-300 hover:text-white underline underline-offset-2 font-semibold transition-colors flex items-center gap-0.5"
-            title="Follow @eynforee on Instagram"
+            className="text-emerald-400 hover:text-emerald-300 underline underline-offset-2 font-semibold transition-colors inline-flex items-center gap-1"
+            title="Join official WhatsApp Channel"
           >
-            <span>@eynforee</span>
+            <span>WhatsApp Channel</span>
             <span className="material-symbols-outlined text-[13px]">arrow_outward</span>
           </a>
         </div>

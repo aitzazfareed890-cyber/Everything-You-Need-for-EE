@@ -1,4 +1,4 @@
-import { WEBSITE_INSTAGRAM_URL } from '../data/courses';
+import { WEBSITE_INSTAGRAM_URL, WHATSAPP_CHANNEL_URL } from '../data/courses';
 
 export default function HotlineBanner() {
   return (
@@ -26,14 +26,16 @@ export default function HotlineBanner() {
             <span>DM on Instagram</span>
           </a>
           <p className="text-[11px] text-slate-400 font-mono mt-4">
-            For further announcements &amp; academic updates, visit{' '}
+            For further announcements &amp; academic updates, join our{' '}
             <a
-              href={WEBSITE_INSTAGRAM_URL}
+              href={WHATSAPP_CHANNEL_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-cyan-400 hover:text-cyan-300 underline underline-offset-2 font-semibold"
+              className="text-emerald-400 hover:text-emerald-300 underline underline-offset-2 font-semibold inline-flex items-center gap-0.5"
+              title="Join official WhatsApp Channel"
             >
-              @eynforee
+              <span>WhatsApp Channel</span>
+              <span className="material-symbols-outlined text-[13px]">arrow_outward</span>
             </a>
           </p>
         </div>
