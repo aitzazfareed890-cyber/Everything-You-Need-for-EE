@@ -36,23 +36,24 @@ export default function FeedbackQueries() {
               <span>Feedback</span>
             </button>
           ) : (
-            <div className="w-full max-w-lg grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div className="w-full max-w-lg flex flex-col sm:flex-row items-center justify-center gap-3">
               <a
                 href={`mailto:${CONTACT_EMAIL}`}
-                className="flex flex-col items-center justify-center gap-1 px-4 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-cyan-500/40 transition-all group"
+                className="w-full sm:w-auto flex-1 flex items-center justify-center gap-2 px-4 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-cyan-500/40 transition-all group"
+                title="Send Email"
               >
-                <span className="inline-flex items-center gap-2">
-                  <span className="material-symbols-outlined text-cyan-400 text-[22px]">mail</span>
-                  <span className="text-sm font-semibold text-white group-hover:text-cyan-300">Email</span>
+                <span className="material-symbols-outlined text-cyan-400 text-[22px]">mail</span>
+                <span className="text-sm font-semibold text-white group-hover:text-cyan-300 inline-flex items-center gap-1">
+                  Email
+                  <span className="material-symbols-outlined text-[14px]">arrow_outward</span>
                 </span>
-                <span className="text-[11px] text-slate-400 break-all">{CONTACT_EMAIL}</span>
               </a>
 
               <a
                 href={WHATSAPP_CHAT_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 px-4 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-emerald-500/40 transition-all group"
+                className="w-full sm:w-auto flex-1 flex items-center justify-center gap-2 px-4 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-emerald-500/40 transition-all group"
                 title="Open WhatsApp chat"
               >
                 <span className="material-symbols-outlined text-emerald-400 text-[22px]">chat</span>
