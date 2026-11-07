@@ -1,7 +1,7 @@
 import { COURSES, USER_DRIVE_LINKS } from '../data/courses';
 
 const LECTURE_NOTES_IMAGE_URL =
-  'https://images.unsplash.com/photo-1555680202-c86f0e12f086?auto=format&fit=crop&w=1200&q=80';
+  'https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1200&q=80';
 const PAST_PAPERS_IMAGE_URL =
   'https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=1200&q=80';
 const LAB_MANUALS_IMAGE_URL =
